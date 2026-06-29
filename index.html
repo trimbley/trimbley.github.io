@@ -1,35 +1,147 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>夸克 浏览器电脑版 - 官方资源与在线工具</title>
-<meta name="description" content="夸克相关资源导航：官网入口与免费在线小工具。夸克浏览器是一款简洁高速的多端浏览器，内置智能搜索、网盘与隐私保护功能。">
+<title>浏览器指纹 / User-Agent 在线查看器 - 看看你的浏览器泄露了什么</title>
+<meta name="description" content="免费纯客户端工具：一键查看本机浏览器的 User-Agent、canvas 与 WebGL 指纹、语言、时区、屏幕与硬件信息——这些正是追踪者用来识别你的信号。">
 <link rel="canonical" href="https://trimbley.github.io/">
-<meta property="og:title" content="夸克 浏览器电脑版">
-<meta property="og:description" content="夸克官网入口与免费在线小工具。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://trimbley.github.io/">
-<style>:root{--b:#1a73e8}*{box-sizing:border-box}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:760px;margin:0 auto;padding:24px;color:#1f2937;line-height:1.7;background:#fff}h1{color:var(--b);font-size:1.6rem;margin:.2em 0}h2{font-size:1.2rem;margin-top:1.6em;border-left:4px solid var(--b);padding-left:10px}.card{border:1px solid #e5e7eb;border-radius:10px;padding:18px;margin:16px 0;background:#fafafa}a{color:var(--b)}footer{margin-top:40px;padding-top:16px;border-top:1px solid #eee;color:#9ca3af;font-size:.85rem}</style>
+<link rel="alternate" hreflang="zh-Hans" href="https://trimbley.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://trimbley.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://trimbley.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://trimbley.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://trimbley.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://trimbley.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://trimbley.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://trimbley.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://trimbley.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://trimbley.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://trimbley.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://trimbley.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://trimbley.github.io/">
+<meta property="og:title" content="浏览器指纹 / User-Agent 在线查看器 - 看看你的浏览器泄露了什么"><meta property="og:description" content="免费纯客户端工具：一键查看本机浏览器的 User-Agent、canvas 与 WebGL 指纹、语言、时区、屏幕与硬件信息——这些正是追踪者用来识别你的信号。"><meta property="og:type" content="website"><meta property="og:url" content="https://trimbley.github.io/"><meta property="og:image" content="https://trimbley.github.io/img/cover_zh.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "浏览器指纹 / User-Agent 在线查看器 - 看看你的浏览器泄露了什么",
+   "url": "https://trimbley.github.io/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "zh-Hans",
+   "description": "免费纯客户端工具：一键查看本机浏览器的 User-Agent、canvas 与 WebGL 指纹、语言、时区、屏幕与硬件信息——这些正是追踪者用来识别你的信号。",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Zhou Yu",
+    "url": "https://trimbley.github.io/about-zhouyu/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "zh-Hans",
+   "url": "https://trimbley.github.io/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "我的数据会被发送到哪里吗？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "不会。扫描完全在你的浏览器内用标准 Web API 完成；数值只显示在页面上，绝不上传。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "User-Agent 字符串是什么？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "它是浏览器随每个请求发送的一行文本，标明浏览器名称、版本和操作系统，是最古老也最基础的指纹信号之一。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "canvas 哈希为什么重要？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "把图像画到 canvas 再读回，会暴露 GPU 与字体渲染上的细微差异，产生一个常常专属于你设备、且跨会话稳定的哈希。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "清除 cookie 能隐藏指纹吗？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "不能。指纹来自设备与浏览器属性，而非存储的 cookie，所以它能在你清除 cookie 或使用无痕模式后依然存在。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "如何减少我的指纹？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "使用会归一信号的浏览器（如 Tor 浏览器或 Brave），保持浏览器更新，并避免使用让你显得与众不同的稀有字体、扩展和屏幕设置。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "这些数值准确吗？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "它们直接读取自你的浏览器，因此就是任何网站能看到的内容。部分属性（deviceMemory、vendor、platform）已废弃或为近似值，可能缺失。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
-<body>
-<h1>夸克</h1>
-<p>夸克浏览器是一款简洁高速的多端浏览器，内置智能搜索、网盘与隐私保护功能。</p>
-<div class="card">
-<h2 style="margin-top:0;border:0;padding:0">官方网站</h2>
-<p>访问 夸克 官方网站，了解完整功能与下载方式：<br>
-<a href="https://browserquark.com/"><strong>browserquark.com</strong></a></p>
+<body><div class="wrap"><main>
+<nav class="lang">语言: <strong>简体中文</strong> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>浏览器指纹 / User-Agent 在线查看器</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_zh.webp"><img src="/img/cover_zh.png" alt="浏览器指纹与 User-Agent 查看器工具示意图" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>浏览器指纹 / User-Agent 查看器——追踪者用来识别浏览器的那些信号</figcaption></figure>
+<p>每个浏览器都会向网站暴露一组信号：User-Agent、canvas 与 WebGL 渲染、字体、语言、时区、屏幕尺寸——它们组合起来，往往不需要任何 cookie 就能识别出你。本工具在你的浏览器本地读取这些信号并展示给你；不上传任何数据，扫描全程在你的设备上完成。</p>
+<section class="tool"><h2>你此刻的浏览器指纹</h2><p class="note">实时读取自你的浏览器。所有数值只显示在本页面，不会发送到任何服务器。</p><div class="btns"><button id="rescan">重新扫描</button><button id="copyjson">复制为 JSON</button></div><table id="fp"></table></section>
+<h2>什么是浏览器指纹？</h2><p>浏览器指纹是用你浏览器对外暴露的属性拼出的一份画像：User-Agent 字符串、已装字体、屏幕分辨率、时区、语言列表，以及设备通过 canvas 和 WebGL 渲染图形的方式。由于这些属性的组合常常是独一无二的，即使你屏蔽 cookie 或用无痕模式，网站仍可能在你再次到访时认出你。</p>
+<figure><svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="浏览器"><rect x="2" y="2" width="716" height="146" rx="14" fill="#fafcff" stroke="#e3ecfb"/><rect x="20" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="94" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">浏览器</text><path d="M168 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="200" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="274" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">信号</text><path d="M348 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="380" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="454" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">组合 + 哈希</text><path d="M528 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="560" y="46" width="148" height="58" rx="12" fill="#0071e3" stroke="#cfe0ff"/><text x="634" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">指纹</text><text x="94" y="128" font-family="system-ui,Arial" font-size="11" fill="#7088b0" text-anchor="middle">UA · Canvas · WebGL · Fonts · TZ</text></svg><figcaption>各路信号被采集、组合并哈希，最终生成一个指纹标识。</figcaption></figure>
+<h2>canvas 与 WebGL 指纹的原理</h2><p>当页面把隐藏的文字和图形画到 canvas 再把像素读回时，你的 GPU、显卡驱动和字体渲染上的细微差异会产生一个稳定、且专属于你这台机器的图像哈希。WebGL 指纹则以同样方式读取未被屏蔽的 GPU 厂商与渲染器。这两个信号之所以强，是因为它们能挺过大多数清除 cookie 的操作，并跨会话持续存在。</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_zh.webp"><img src="/img/board_zh.png" alt="浏览器指纹熵来源示意图" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>指纹是怎样形成的：多个信号被组合并哈希成一个标识</figcaption></figure>
+<h2>哪些信号暴露得最多</h2><p>研究者用「熵的比特数」衡量识别力：比特越多，和你取值相同的人越少。已发表研究把一份完整指纹估为约 18 比特，其中字体、User-Agent、canvas 和 WebGL 渲染器是最强的贡献项。下图展示了主要来源的相对权重。</p>
+<figure><svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="识别力（比特）"><rect x="2" y="2" width="716" height="246" rx="14" fill="#fff7f7" stroke="#fde2e2"/><text x="20" y="30" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="700" fill="#b91c1c">识别力（比特）</text><text x="20" y="66" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Fonts</text><rect x="150" y="52" width="496" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="98" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">User-Agent</text><rect x="150" y="84" width="432" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="130" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Canvas</text><rect x="150" y="116" width="410" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="162" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">WebGL</text><rect x="150" y="148" width="367" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="194" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Screen</text><rect x="150" y="180" width="280" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="226" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Timezone</text><rect x="150" y="212" width="183" height="20" rx="6" fill="#ef6a6a"/></svg><figcaption>常见指纹信号的相对识别力（示意；据 EFF，canvas 约 5.7 比特）。</figcaption></figure>
+<section class="i4data">
+<h2>浏览器指纹现状（2026 估算）</h2>
+<p>下列数字是以公开研究为基线（EFF Panopticlick 2010、AmIUnique 2016、Hiding in the Crowd 2018）加时间外推得到的 2026 估算——非一手实测，仅供参考。</p>
+<table>
+<tr><th>信号</th><th>数值</th></tr><tr><td>桌面端指纹唯一占比</td><td>基线约 83.6%（Panopticlick）至 89.4%（AmIUnique）；未开反指纹时 2026 仍超 80%</td></tr><tr><td>移动端指纹唯一占比</td><td>约 18.5%（Hiding in the Crowd 2018）——更低，因手机更同质化</td></tr><tr><td>完整指纹的总熵</td><td>基线约 18.1 比特，约相当于 28.6 万台浏览器里挑出 1 台</td></tr><tr><td>仅 canvas 一项</td><td>约增加 5.7 比特熵（EFF）</td></tr><tr><td>最强的单项信号</td><td>字体集（约 34% 可识别）、User-Agent、canvas、WebGL 渲染器、屏幕</td></tr><tr><td>浏览器扩展</td><td>约 56.86% 的用户拥有唯一的扩展组合</td></tr><tr><td>反指纹的效果</td><td>Tor 浏览器、Brave 与 Safari ITP 可通过归一或屏蔽信号大幅降低唯一性</td></tr>
+</table>
+<p><small>估算口径：以公开研究为基线（EFF / AmIUnique / Hiding in the Crowd）加时间外推；非一手实测，随浏览器与反指纹技术演进而变。</small></p>
+</section>
+<div class="faq"><h2>FAQ</h2>
+<h3>我的数据会被发送到哪里吗？</h3>
+<p>不会。扫描完全在你的浏览器内用标准 Web API 完成；数值只显示在页面上，绝不上传。</p>
+<h3>User-Agent 字符串是什么？</h3>
+<p>它是浏览器随每个请求发送的一行文本，标明浏览器名称、版本和操作系统，是最古老也最基础的指纹信号之一。</p>
+<h3>canvas 哈希为什么重要？</h3>
+<p>把图像画到 canvas 再读回，会暴露 GPU 与字体渲染上的细微差异，产生一个常常专属于你设备、且跨会话稳定的哈希。</p>
+<h3>清除 cookie 能隐藏指纹吗？</h3>
+<p>不能。指纹来自设备与浏览器属性，而非存储的 cookie，所以它能在你清除 cookie 或使用无痕模式后依然存在。</p>
+<h3>如何减少我的指纹？</h3>
+<p>使用会归一信号的浏览器（如 Tor 浏览器或 Brave），保持浏览器更新，并避免使用让你显得与众不同的稀有字体、扩展和屏幕设置。</p>
+<h3>这些数值准确吗？</h3>
+<p>它们直接读取自你的浏览器，因此就是任何网站能看到的内容。部分属性（deviceMemory、vendor、platform）已废弃或为近似值，可能缺失。</p>
 </div>
-<div class="card">
-<h2 style="margin-top:0;border:0;padding:0">免费在线小工具</h2>
-<p>本站还为 夸克 用户提供一个纯本地运行的小工具（数据不上传）：<br>
-<a href="https://trimbley.github.io/browserquark-fingerprint-viewer/">浏览器指纹查看器 →</a></p>
+<div class="related"><h2>获取夸克浏览器</h2><p>夸克浏览器是一款轻量的 AI 浏览器，支持 Windows、macOS、Android、iOS 与网页版下载：</p>
+<p><a href="https://browserquark.com/download/">夸克浏览器·全平台下载</a></p></div>
+<div class="sources"><h2>参考资料</h2><ul><li><a href="https://en.wikipedia.org/wiki/Device_fingerprint" rel="nofollow noopener" target="_blank">设备指纹 - 维基百科</a></li><li><a href="https://coveryourtracks.eff.org/" rel="nofollow noopener" target="_blank">EFF Cover Your Tracks</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator" rel="nofollow noopener" target="_blank">MDN - Navigator API</a></li><li><a href="https://amiunique.org/" rel="nofollow noopener" target="_blank">AmIUnique 研究项目</a></li></ul></div>
+</main>
+<footer>由周屿整理自公开研究（EFF Panopticlick、AmIUnique、Hiding in the Crowd）与 MDN Web 文档，仅供参考；实时扫描读取的是你自己的浏览器。<br><a href="/about-zhouyu/" rel="author">关于作者：周屿</a> · MIT License</footer>
 </div>
-<h2>关于 夸克</h2>
-<p>夸克浏览器是一款简洁高速的多端浏览器，内置智能搜索、网盘与隐私保护功能。 更多信息与下载请访问 <a href="https://browserquark.com/">夸克官网</a>。</p>
-<footer>
-<p>本页为 夸克 相关资源导航页，工具均在本地浏览器处理、不上传服务器。</p>
-<p>官网：<a href="https://browserquark.com/">browserquark.com</a> · 最后更新：2026-06</p>
-</footer>
-</body>
-</html>
+<script>window.FPL={"ua": "User-Agent", "platform": "平台", "vendor": "浏览器厂商", "langs": "语言列表", "tz": "时区", "tzoff": "UTC 偏移（分钟）", "screen": "屏幕", "viewport": "视口", "depth": "颜色深度", "dpr": "像素比", "cores": "CPU 核心数", "mem": "设备内存（GB）", "touch": "最大触点数", "canvas": "Canvas 指纹", "webglv": "WebGL 厂商", "webglr": "WebGL 渲染器", "webglf": "WebGL 指纹", "audio": "音频指纹", "cookies": "Cookie 已启用", "dnt": "Do Not Track", "storage": "本地存储", "fonts": "检测到的字体（抽样）", "uniqueness": "估算识别比特数", "field": "信号", "value": "数值"};</script>
+<script src="/app.js"></script>
+</body></html>
