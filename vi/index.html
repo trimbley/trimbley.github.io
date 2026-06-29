@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dấu vân tay trình duyệt &amp; Trình xem User-Agent - kiểm tra những gì trình duyệt của bạn bị rò rỉ</title>
+<meta name="description" content="Công cụ miễn phí phía máy khách: xem ngay dấu vân tay User-Agent, canvas &amp; WebGL, ngôn ngữ, múi giờ, màn hình và phần cứng của trình duyệt của bạn - các tín hiệu chính xác mà trình theo dõi sử dụng để nhận dạng bạn.">
+<link rel="canonical" href="https://trimbley.github.io/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://trimbley.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://trimbley.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://trimbley.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://trimbley.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://trimbley.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://trimbley.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://trimbley.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://trimbley.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://trimbley.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://trimbley.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://trimbley.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://trimbley.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://trimbley.github.io/">
+<meta property="og:title" content="Dấu vân tay trình duyệt &amp; Trình xem User-Agent - kiểm tra những gì trình duyệt của bạn bị rò rỉ"><meta property="og:description" content="Công cụ miễn phí phía máy khách: xem ngay dấu vân tay User-Agent, canvas &amp; WebGL, ngôn ngữ, múi giờ, màn hình và phần cứng của trình duyệt của bạn - các tín hiệu chính xác mà trình theo dõi sử dụng để nhận dạng bạn."><meta property="og:type" content="website"><meta property="og:url" content="https://trimbley.github.io/vi/"><meta property="og:image" content="https://trimbley.github.io/img/cover_vi.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Dấu vân tay trình duyệt & Trình xem User-Agent - kiểm tra những gì trình duyệt của bạn bị rò rỉ",
+   "url": "https://trimbley.github.io/vi/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "vi",
+   "description": "Công cụ miễn phí phía máy khách: xem ngay dấu vân tay User-Agent, canvas & WebGL, ngôn ngữ, múi giờ, màn hình và phần cứng của trình duyệt của bạn - các tín hiệu chính xác mà trình theo dõi sử dụng để nhận dạng bạn.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Zhou Yu",
+    "url": "https://trimbley.github.io/about-zhouyu/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "vi",
+   "url": "https://trimbley.github.io/vi/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Dữ liệu của tôi có được gửi đi đâu không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Không. Quá trình quét chạy hoàn toàn trong trình duyệt của bạn bằng API web tiêu chuẩn; các giá trị được hiển thị trên trang và không bao giờ được tải lên."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Chuỗi User-Agent là gì?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Đó là dòng mà trình duyệt của bạn gửi đi cùng với mọi yêu cầu nêu tên trình duyệt, phiên bản và hệ điều hành. Đây là một trong những tín hiệu vân tay cơ bản và lâu đời nhất."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Tại sao hàm băm canvas lại quan trọng?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vẽ và đọc lại hình ảnh canvas sẽ hiển thị những khác biệt nhỏ về GPU và cách hiển thị phông chữ, tạo ra hàm băm thường dành riêng cho thiết bị của bạn và ổn định trong các phiên."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Việc xóa cookie có ẩn dấu vân tay của tôi không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Không. Dấu vân tay được tạo từ thuộc tính của thiết bị và trình duyệt, không phải cookie được lưu trữ, vì vậy, dấu vân tay có thể tồn tại sau khi bạn xóa cookie hoặc sử dụng chế độ riêng tư."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Làm cách nào để giảm dấu vân tay của tôi?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sử dụng trình duyệt bình thường hóa tín hiệu (chẳng hạn như Trình duyệt Tor hoặc Brave), luôn cập nhật trình duyệt của bạn và tránh các phông chữ, tiện ích mở rộng và cài đặt màn hình hiếm khiến bạn nổi bật."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Những giá trị này có chính xác không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chúng được đọc trực tiếp từ trình duyệt của bạn, vì vậy chúng phản ánh những gì mà bất kỳ trang web nào cũng có thể nhìn thấy. Một số thuộc tính (deviceMemory, nhà cung cấp, nền tảng) không được dùng nữa hoặc gần đúng và có thể bị thiếu."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Ngôn ngữ: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <strong>Tiếng Việt</strong> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Trình duyệt vân tay &amp; Trình xem User-Agent</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_vi.webp"><img src="/img/cover_vi.png" alt="Minh họa vân tay trình duyệt và công cụ xem User-Agent" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Dấu vân tay trình duyệt &amp; trình xem User-Agent - trình theo dõi tín hiệu kết hợp để nhận dạng trình duyệt</figcaption></figure>
+<p>Mọi trình duyệt đều rò rỉ một tập hợp tín hiệu - kết xuất User-Agent, canvas và WebGL, phông chữ, ngôn ngữ, múi giờ và kích thước màn hình - cùng nhau có thể nhận dạng bạn mà không cần bất kỳ cookie nào. Công cụ này đọc các tín hiệu đó cục bộ trong trình duyệt của bạn và hiển thị chúng cho bạn. Không có gì được tải lên; quá trình quét chạy hoàn toàn trên thiết bị của bạn.</p>
+<section class="tool"><h2>Dấu vân tay trình duyệt của bạn, ngay bây giờ</h2><p class="note">Đọc trực tiếp từ trình duyệt của bạn. Các giá trị vẫn ở trên trang này - không có gì được gửi đến máy chủ.</p><div class="btns"><button id="rescan">Quét lại</button><button id="copyjson">Sao chép dưới dạng JSON</button></div><table id="fp"></table></section>
+<h2>Dấu vân tay của trình duyệt là gì?</h2><p>Vân tay trình duyệt là một hồ sơ được tạo từ các thuộc tính mà trình duyệt của bạn hiển thị với bất kỳ trang web nào: chuỗi User-Agent, phông chữ đã cài đặt, độ phân giải màn hình, múi giờ, danh sách ngôn ngữ và cách thiết bị của bạn hiển thị đồ họa qua canvas và WebGL. Bởi vì sự kết hợp thường là duy nhất nên một trang web có thể nhận ra bạn trong những lần truy cập sau ngay cả khi bạn chặn cookie hoặc sử dụng chế độ riêng tư.</p>
+<figure><svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trình duyệt"><rect x="2" y="2" width="716" height="146" rx="14" fill="#fafcff" stroke="#e3ecfb"/><rect x="20" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="94" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">Trình duyệt</text><path d="M168 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="200" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="274" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">Tín hiệu</text><path d="M348 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="380" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="454" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">Kết hợp + băm</text><path d="M528 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="560" y="46" width="148" height="58" rx="12" fill="#0071e3" stroke="#cfe0ff"/><text x="634" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Dấu vân tay</text><text x="94" y="128" font-family="system-ui,Arial" font-size="11" fill="#7088b0" text-anchor="middle">UA · Canvas · WebGL · Fonts · TZ</text></svg><figcaption>Tín hiệu được thu thập, kết hợp và băm thành một mã định danh dấu vân tay.</figcaption></figure>
+<h2>Cách hoạt động của dấu vân tay canvas và WebGL</h2><p>Khi một trang vẽ văn bản và hình dạng ẩn vào khung vẽ và đọc lại các pixel, những khác biệt nhỏ trong GPU, trình điều khiển đồ họa và kết xuất phông chữ sẽ tạo ra hàm băm hình ảnh ổn định dành riêng cho máy của bạn. Dấu vân tay WebGL đọc nhà cung cấp và trình kết xuất GPU không được che giấu theo cách tương tự. Hai tín hiệu này rất mạnh vì chúng tồn tại trong hầu hết quá trình xóa cookie và tồn tại qua các phiên.</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_vi.webp"><img src="/img/board_vi.png" alt="Sơ đồ nguồn entropy vân tay của trình duyệt" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Cách tạo dấu vân tay của trình duyệt: nhiều tín hiệu được kết hợp và băm thành một mã định danh</figcaption></figure>
+<h2>Những tín hiệu nào tiết lộ nhiều nhất</h2><p>Các nhà nghiên cứu đo lường khả năng nhận dạng theo bit entropy: nhiều bit hơn nghĩa là ít người chia sẻ giá trị của bạn hơn. Các nghiên cứu đã xuất bản đặt dấu vân tay đầy đủ khoảng 18 bit, với phông chữ, User-Agent, canvas và trình kết xuất WebGL nằm trong số những yếu tố đóng góp mạnh nhất. Biểu đồ dưới đây cho thấy trọng số tương đối của các nguồn chính.</p>
+<figure><svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Xác định sức mạnh (bit)"><rect x="2" y="2" width="716" height="246" rx="14" fill="#fff7f7" stroke="#fde2e2"/><text x="20" y="30" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="700" fill="#b91c1c">Xác định sức mạnh (bit)</text><text x="20" y="66" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Fonts</text><rect x="150" y="52" width="496" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="98" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">User-Agent</text><rect x="150" y="84" width="432" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="130" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Canvas</text><rect x="150" y="116" width="410" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="162" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">WebGL</text><rect x="150" y="148" width="367" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="194" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Screen</text><rect x="150" y="180" width="280" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="226" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Timezone</text><rect x="150" y="212" width="183" height="20" rx="6" fill="#ef6a6a"/></svg><figcaption>Khả năng nhận dạng tương đối của các tín hiệu vân tay thông thường (minh họa; canvas khoảng 5,7 bit trên mỗi EFF).</figcaption></figure>
+<section class="i4data">
+<h2>Tổng quan về dấu vân tay của trình duyệt (ước tính năm 2026)</h2>
+<p>Các số liệu bên dưới là ước tính năm 2026 được xây dựng từ các nghiên cứu cơ sở đã được công bố (EFF Panopticlick 2010, AmIUnique 2016, Ẩn trong đám đông 2018) cộng với phép ngoại suy theo thời gian - không phải phép đo trực tiếp, chỉ để tham khảo.</p>
+<table>
+<tr><th>tín hiệu</th><th>Giá trị</th></tr><tr><td>Dấu vân tay trên máy tính để bàn là duy nhất</td><td>đường cơ sở ~ 83,6% (Panopticlick) đến ~ 89,4% (AmIUnique); vẫn còn trên 80% vào năm 2026 khi tính năng chống vân tay bị tắt</td></tr><tr><td>Dấu vân tay di động là duy nhất</td><td>~18,5% (Ẩn mình trong đám đông 2018) - thấp hơn, vì điện thoại đồng nhất hơn</td></tr><tr><td>Tổng số entropy dấu vân tay</td><td>~18,1 bit cơ sở, khoảng 1 trên 286.000 trình duyệt</td></tr><tr><td>Riêng tín hiệu Canvas</td><td>~5,7 bit entropy được thêm vào (EFF)</td></tr><tr><td>Tín hiệu đơn mạnh nhất</td><td>bộ phông chữ (có thể nhận dạng được khoảng 34%), User-Agent, canvas, trình kết xuất WebGL, màn hình</td></tr><tr><td>Tiện ích mở rộng của trình duyệt</td><td>khoảng 56,86% người dùng có bộ tiện ích mở rộng duy nhất</td></tr><tr><td>Tác dụng chống bám vân tay</td><td>Trình duyệt Tor, Brave và Safari ITP có thể giảm mạnh tính độc đáo bằng cách chuẩn hóa hoặc chặn tín hiệu</td></tr>
+</table>
+<p><small>Cơ sở ước tính: cơ sở nghiên cứu công khai (EFF / AmIUnique / Ẩn mình trong đám đông) cộng với phép ngoại suy theo thời gian; không phải là phép đo trực tiếp và thay đổi khi trình duyệt và tính năng chống dấu vân tay phát triển.</small></p>
+</section>
+<div class="faq"><h2>FAQ</h2>
+<h3>Dữ liệu của tôi có được gửi đi đâu không?</h3>
+<p>Không. Quá trình quét chạy hoàn toàn trong trình duyệt của bạn bằng API web tiêu chuẩn; các giá trị được hiển thị trên trang và không bao giờ được tải lên.</p>
+<h3>Chuỗi User-Agent là gì?</h3>
+<p>Đó là dòng mà trình duyệt của bạn gửi đi cùng với mọi yêu cầu nêu tên trình duyệt, phiên bản và hệ điều hành. Đây là một trong những tín hiệu vân tay cơ bản và lâu đời nhất.</p>
+<h3>Tại sao hàm băm canvas lại quan trọng?</h3>
+<p>Vẽ và đọc lại hình ảnh canvas sẽ hiển thị những khác biệt nhỏ về GPU và cách hiển thị phông chữ, tạo ra hàm băm thường dành riêng cho thiết bị của bạn và ổn định trong các phiên.</p>
+<h3>Việc xóa cookie có ẩn dấu vân tay của tôi không?</h3>
+<p>Không. Dấu vân tay được tạo từ thuộc tính của thiết bị và trình duyệt, không phải cookie được lưu trữ, vì vậy, dấu vân tay có thể tồn tại sau khi bạn xóa cookie hoặc sử dụng chế độ riêng tư.</p>
+<h3>Làm cách nào để giảm dấu vân tay của tôi?</h3>
+<p>Sử dụng trình duyệt bình thường hóa tín hiệu (chẳng hạn như Trình duyệt Tor hoặc Brave), luôn cập nhật trình duyệt của bạn và tránh các phông chữ, tiện ích mở rộng và cài đặt màn hình hiếm khiến bạn nổi bật.</p>
+<h3>Những giá trị này có chính xác không?</h3>
+<p>Chúng được đọc trực tiếp từ trình duyệt của bạn, vì vậy chúng phản ánh những gì mà bất kỳ trang web nào cũng có thể nhìn thấy. Một số thuộc tính (deviceMemory, nhà cung cấp, nền tảng) không được dùng nữa hoặc gần đúng và có thể bị thiếu.</p>
+</div>
+<div class="related"><h2>Nhận Quark Browser</h2><p>Quark Browser là một trình duyệt AI nhẹ. Tải xuống cho Windows, macOS, Android, iOS hoặc web:</p>
+<p><a href="https://browserquark.com/download/">Quark Browser - tải xuống trên mọi nền tảng</a></p></div>
+<div class="sources"><h2>Tài liệu tham khảo</h2><ul><li><a href="https://en.wikipedia.org/wiki/Device_fingerprint" rel="nofollow noopener" target="_blank">Dấu vân tay của thiết bị - Wikipedia</a></li><li><a href="https://coveryourtracks.eff.org/" rel="nofollow noopener" target="_blank">EFF Cover Your Tracks</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator" rel="nofollow noopener" target="_blank">MDN - API điều hướng</a></li><li><a href="https://amiunique.org/" rel="nofollow noopener" target="_blank">Dự án nghiên cứu AmIUnique</a></li></ul></div>
+</main>
+<footer>Được biên soạn bởi Chu Du từ nghiên cứu công cộng (EFF Panopticlick, AmIUnique, Ẩn trong đám đông) và Tài liệu web MDN. Chỉ để tham khảo; quét trực tiếp đọc trình duyệt của riêng bạn.<br><a href="/about-zhouyu/" rel="author">Về tác giả: Chu Du</a> · MIT License</footer>
+</div>
+<script>window.FPL={"ua": "User-Agent", "platform": "Nền tảng", "vendor": "Nhà cung cấp trình duyệt", "langs": "Ngôn ngữ", "tz": "Múi giờ", "tzoff": "Độ lệch UTC (phút)", "screen": "Màn hình", "viewport": "Chế độ xem", "depth": "Độ sâu màu", "dpr": "Tỷ lệ pixel", "cores": "lõi CPU", "mem": "Bộ nhớ thiết bị (GB)", "touch": "Điểm tiếp xúc tối đa", "canvas": "Dấu vân tay Canvas", "webglv": "Nhà cung cấp WebGL", "webglr": "Trình kết xuất WebGL", "webglf": "Dấu vân tay WebGL", "audio": "Dấu vân tay âm thanh", "cookies": "Đã bật cookie", "dnt": "Do Not Track", "storage": "Bộ nhớ cục bộ", "fonts": "Phông chữ được phát hiện (mẫu)", "uniqueness": "Các bit nhận dạng ước tính", "field": "tín hiệu", "value": "Giá trị"};</script>
+<script src="/app.js"></script>
+</body></html>
