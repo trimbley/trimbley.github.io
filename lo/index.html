@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="lo"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Browser Fingerprint &amp; User-Agent Viewer - ກວດເບິ່ງສິ່ງທີ່ຕົວທ່ອງເວັບຂອງທ່ານຮົ່ວ</title>
+<meta name="description" content="ເຄື່ອງມືດ້ານລູກຄ້າທີ່ບໍ່ເສຍຄ່າ: ທັນທີເບິ່ງ User-Agent, canvas &amp; WebGL fingerprint, ພາສາ, ເຂດເວລາ, ຫນ້າຈໍແລະຮາດແວຂອງຕົວທ່ອງເວັບຂອງທ່ານ - ເຄື່ອງຕິດຕາມສັນຍານທີ່ແນ່ນອນໃຊ້ເພື່ອກໍານົດຕົວເຈົ້າ.">
+<link rel="canonical" href="https://trimbley.github.io/lo/">
+<link rel="alternate" hreflang="zh-Hans" href="https://trimbley.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://trimbley.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://trimbley.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://trimbley.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://trimbley.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://trimbley.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://trimbley.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://trimbley.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://trimbley.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://trimbley.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://trimbley.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://trimbley.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://trimbley.github.io/">
+<meta property="og:title" content="Browser Fingerprint &amp; User-Agent Viewer - ກວດເບິ່ງສິ່ງທີ່ຕົວທ່ອງເວັບຂອງທ່ານຮົ່ວ"><meta property="og:description" content="ເຄື່ອງມືດ້ານລູກຄ້າທີ່ບໍ່ເສຍຄ່າ: ທັນທີເບິ່ງ User-Agent, canvas &amp; WebGL fingerprint, ພາສາ, ເຂດເວລາ, ຫນ້າຈໍແລະຮາດແວຂອງຕົວທ່ອງເວັບຂອງທ່ານ - ເຄື່ອງຕິດຕາມສັນຍານທີ່ແນ່ນອນໃຊ້ເພື່ອກໍານົດຕົວເຈົ້າ."><meta property="og:type" content="website"><meta property="og:url" content="https://trimbley.github.io/lo/"><meta property="og:image" content="https://trimbley.github.io/img/cover_lo.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Browser Fingerprint & User-Agent Viewer - ກວດເບິ່ງສິ່ງທີ່ຕົວທ່ອງເວັບຂອງທ່ານຮົ່ວ",
+   "url": "https://trimbley.github.io/lo/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "lo",
+   "description": "ເຄື່ອງມືດ້ານລູກຄ້າທີ່ບໍ່ເສຍຄ່າ: ທັນທີເບິ່ງ User-Agent, canvas & WebGL fingerprint, ພາສາ, ເຂດເວລາ, ຫນ້າຈໍແລະຮາດແວຂອງຕົວທ່ອງເວັບຂອງທ່ານ - ເຄື່ອງຕິດຕາມສັນຍານທີ່ແນ່ນອນໃຊ້ເພື່ອກໍານົດຕົວເຈົ້າ.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Zhou Yu",
+    "url": "https://trimbley.github.io/about-zhouyu/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "lo",
+   "url": "https://trimbley.github.io/lo/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "ຂໍ້ມູນຂອງຂ້ອຍຖືກສົ່ງໄປທຸກບ່ອນບໍ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ບໍ່. ການສະແກນເຮັດວຽກທັງໝົດຢູ່ໃນບຣາວເຊີຂອງທ່ານໂດຍໃຊ້ APIs ເວັບມາດຕະຖານ; ຄ່າແມ່ນສະແດງຢູ່ໃນຫນ້າແລະບໍ່ເຄີຍອັບໂຫລດ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ສະຕຣິງ User-Agent ແມ່ນຫຍັງ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ມັນເປັນແຖວທີ່ຕົວທ່ອງເວັບຂອງທ່ານສົ່ງກັບທຸກໆຄໍາຮ້ອງຂໍທີ່ຕັ້ງຊື່ຂອງຕົວທ່ອງເວັບ, ຮຸ່ນຂອງມັນແລະລະບົບປະຕິບັດການ. ມັນແມ່ນ ໜຶ່ງ ໃນສັນຍານລາຍນິ້ວມືທີ່ເກົ່າແກ່ທີ່ສຸດແລະພື້ນຖານທີ່ສຸດ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ເປັນຫຍັງ hash canvas ຈຶ່ງສຳຄັນ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ການແຕ້ມຮູບແລະການອ່ານຄືນຮູບ canvas ເປີດເຜີຍ GPU ຂະຫນາດນ້ອຍແລະຄວາມແຕກຕ່າງການສະແດງຕົວອັກສອນ, ຜະລິດ hash ທີ່ມັກຈະເປັນເອກະລັກຂອງອຸປະກອນຂອງທ່ານແລະມີຄວາມຫມັ້ນຄົງໃນທົ່ວກອງປະຊຸມ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ການລ້າງ cookies ເຊື່ອງລາຍນິ້ວມືຂອງຂ້ອຍບໍ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ບໍ່. ລາຍນິ້ວມືແມ່ນສ້າງຂຶ້ນຈາກຄຸນສົມບັດຂອງອຸປະກອນ ແລະ ບຣາວເຊີ, ບໍ່ແມ່ນຄຸກກີ້ທີ່ເກັບໄວ້, ສະນັ້ນ ມັນສາມາດຄົງຢູ່ໄດ້ຫຼັງຈາກທີ່ທ່ານລຶບລ້າງຄຸກກີ້ ຫຼື ໃຊ້ໂໝດສ່ວນຕົວ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ຂ້ອຍຈະຫຼຸດລາຍນິ້ວມືໄດ້ແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ໃຊ້ຕົວທ່ອງເວັບທີ່ເຮັດໃຫ້ສັນຍານປົກກະຕິ (ເຊັ່ນ Tor Browser ຫຼື Brave), ປັບປຸງຕົວທ່ອງເວັບຂອງທ່ານ, ແລະຫຼີກເວັ້ນຕົວອັກສອນທີ່ຫາຍາກ, ສ່ວນຂະຫຍາຍແລະການຕັ້ງຄ່າຫນ້າຈໍທີ່ເຮັດໃຫ້ທ່ານໂດດເດັ່ນ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ຄ່າເຫຼົ່ານີ້ຖືກຕ້ອງບໍ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ພວກເຂົາເຈົ້າໄດ້ຖືກອ່ານໂດຍກົງຈາກຕົວທ່ອງເວັບຂອງທ່ານ, ດັ່ງນັ້ນພວກເຂົາສະທ້ອນໃຫ້ເຫັນເຖິງສິ່ງທີ່ເວັບໄຊທ໌ໃດສາມາດເຫັນໄດ້. ຄຸນສົມບັດບາງຢ່າງ (ອຸປະກອນຄວາມຈຳ, ຜູ້ຂາຍ, ແພລດຟອມ) ຖືກຍົກເລີກ ຫຼືປະມານ ແລະອາດຈະຫາຍໄປ."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">ພາສາ: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <strong>ພາສາລາວ</strong> · <a href="/my/">မြန်မာ</a></nav>
+<h1>ລາຍນິ້ວມືຂອງຕົວທ່ອງເວັບ &amp; ຕົວເບິ່ງ User-Agent</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_lo.webp"><img src="/img/cover_lo.png" alt="ລາຍນິ້ວມືຂອງຕົວທ່ອງເວັບແລະ User-Agent ເຄື່ອງມື viewer ຕົວຢ່າງ" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ລາຍນິ້ວມືຂອງຕົວທ່ອງເວັບ &amp; ຕົວເບິ່ງ User-Agent - ຕົວຕິດຕາມສັນຍານປະສົມປະສານເພື່ອກໍານົດຕົວທ່ອງເວັບ</figcaption></figure>
+<p>ທຸກໆຕົວທ່ອງເວັບຮົ່ວໄຫລຂອງສັນຍານ - User-Agent, canvas ແລະ WebGL rendering, fonts, ພາສາ, ເຂດເວລາແລະຂະຫນາດຫນ້າຈໍຂອງທ່ານ - ທີ່ຮ່ວມກັນສາມາດລະບຸຕົວເຈົ້າໂດຍບໍ່ມີການຄຸກກີໃດໆ. ເຄື່ອງ​ມື​ນີ້​ອ່ານ​ສັນ​ຍານ​ເຫຼົ່າ​ນັ້ນ​ຢູ່​ໃນ​ຕົວ​ທ່ອງ​ເວັບ​ຂອງ​ທ່ານ​ແລະ​ສະ​ແດງ​ໃຫ້​ເຫັນ​ໃຫ້​ເຂົາ​ເຈົ້າ​. ບໍ່ມີຫຍັງຖືກອັບໂຫລດ; ການສະແກນຈະເຮັດວຽກຢູ່ໃນອຸປະກອນຂອງທ່ານທັງໝົດ.</p>
+<section class="tool"><h2>ລາຍນິ້ວມືຂອງຕົວທ່ອງເວັບ, ດຽວນີ້</h2><p class="note">ອ່ານສົດຈາກຕົວທ່ອງເວັບຂອງທ່ານ. ຄ່າຍັງຄົງຢູ່ໃນຫນ້ານີ້ - ບໍ່ມີຫຍັງຖືກສົ່ງໄປຫາເຄື່ອງແມ່ຂ່າຍ.</p><div class="btns"><button id="rescan">ສະແກນໃໝ່</button><button id="copyjson">ສຳເນົາເປັນ JSON</button></div><table id="fp"></table></section>
+<h2>ລາຍນິ້ວມືຂອງຕົວທ່ອງເວັບແມ່ນຫຍັງ?</h2><p>ລາຍນິ້ວມືຂອງບຣາວເຊີແມ່ນໂປຣໄຟລ໌ທີ່ສ້າງຂຶ້ນຈາກຄຸນສົມບັດທີ່ບຼາວເຊີຂອງທ່ານເປີດເຜີຍຕໍ່ກັບເວັບໄຊທ໌ໃດນຶ່ງ: User-Agent string, fonts ທີ່ຕິດຕັ້ງ, ຄວາມລະອຽດໜ້າຈໍ, ເຂດເວລາ, ລາຍຊື່ພາສາ ແລະວິທີທີ່ອຸປະກອນຂອງທ່ານສະແດງກາຟິກຜ່ານ canvas ແລະ WebGL. ເນື່ອງຈາກວ່າການປະສົມປະສານມັກຈະເປັນເອກະລັກ, ເວັບໄຊທ໌ສາມາດຮັບຮູ້ທ່ານໃນເວລາຕໍ່ມາເຖິງແມ່ນວ່າທ່ານຈະບລັອກ cookies ຫຼືໃຊ້ໂຫມດສ່ວນຕົວ.</p>
+<figure><svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ຕົວທ່ອງເວັບ"><rect x="2" y="2" width="716" height="146" rx="14" fill="#fafcff" stroke="#e3ecfb"/><rect x="20" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="94" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">ຕົວທ່ອງເວັບ</text><path d="M168 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="200" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="274" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">ສັນຍານ</text><path d="M348 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="380" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="454" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">ສົມທົບ + hash</text><path d="M528 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="560" y="46" width="148" height="58" rx="12" fill="#0071e3" stroke="#cfe0ff"/><text x="634" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">ລາຍນິ້ວມື</text><text x="94" y="128" font-family="system-ui,Arial" font-size="11" fill="#7088b0" text-anchor="middle">UA · Canvas · WebGL · Fonts · TZ</text></svg><figcaption>ສັນຍານໄດ້ຖືກເກັບກໍາ, ປະສົມປະສານແລະ hashed ເຂົ້າໄປໃນຕົວລະບຸນິ້ວມືຫນຶ່ງ.</figcaption></figure>
+<h2>ການພິມລາຍນິ້ວມືຂອງຜ້າໃບ ແລະ WebGL ເຮັດວຽກແນວໃດ</h2><p>ເມື່ອຫນ້າເວັບແຕ້ມຂໍ້ຄວາມແລະຮູບຮ່າງທີ່ເຊື່ອງໄວ້ໃສ່ຜ້າໃບແລະອ່ານ pixels ກັບຄືນໄປບ່ອນ, ຄວາມແຕກຕ່າງເລັກນ້ອຍໃນ GPU ຂອງທ່ານ, ໄດເວີກຣາຟິກແລະການສະແດງຕົວອັກສອນເຮັດໃຫ້ຮູບພາບທີ່ຫມັ້ນຄົງທີ່ສະເພາະກັບເຄື່ອງຂອງທ່ານ. WebGL fingerprinting ອ່ານຜູ້ຂາຍ GPU ທີ່ບໍ່ມີການປິດບັງແລະສະແດງຜົນແບບດຽວກັນ. ສັນຍານສອງອັນນີ້ແມ່ນມີພະລັງເພາະວ່າພວກມັນຢູ່ລອດຈາກການລ້າງຄຸກກີສ່ວນໃຫຍ່ ແລະຍັງຄົງຢູ່ຕະຫຼອດເຊດຊັນ.</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_lo.webp"><img src="/img/board_lo.png" alt="ແຜນວາດຂອງແຫຼ່ງ entropy fingerprint ຂອງຕົວທ່ອງເວັບ" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ວິທີການສ້າງລາຍນິ້ວມືຂອງຕົວທ່ອງເວັບ: ຫຼາຍສັນຍານຖືກລວມເຂົ້າກັນແລະຖືກແຍກເຂົ້າໄປໃນຕົວລະບຸຕົວດຽວ</figcaption></figure>
+<h2>ສັນຍານອັນໃດເປີດເຜີຍຫຼາຍທີ່ສຸດ</h2><p>ນັກຄົ້ນຄວ້າວັດແທກການກໍານົດພະລັງງານໃນບິດຂອງ entropy: bits ຫຼາຍຫມາຍຄວາມວ່າປະຊາຊົນຫນ້ອຍແບ່ງປັນມູນຄ່າຂອງທ່ານ. ການສຶກສາທີ່ເຜີຍແຜ່ໄດ້ວາງລາຍນິ້ວມືເຕັມປະມານ 18 ບິດ, ດ້ວຍຕົວອັກສອນ, User-Agent, ຜ້າໃບແລະຕົວສະແດງ WebGL ໃນບັນດາຜູ້ປະກອບສ່ວນທີ່ເຂັ້ມແຂງທີ່ສຸດ. ຕາຕະລາງຂ້າງລຸ່ມນີ້ສະແດງໃຫ້ເຫັນນ້ໍາຫນັກທີ່ກ່ຽວຂ້ອງຂອງແຫຼ່ງຕົ້ນຕໍ.</p>
+<figure><svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ການກໍານົດພະລັງງານ (ບິດ)"><rect x="2" y="2" width="716" height="246" rx="14" fill="#fff7f7" stroke="#fde2e2"/><text x="20" y="30" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="700" fill="#b91c1c">ການກໍານົດພະລັງງານ (ບິດ)</text><text x="20" y="66" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Fonts</text><rect x="150" y="52" width="496" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="98" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">User-Agent</text><rect x="150" y="84" width="432" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="130" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Canvas</text><rect x="150" y="116" width="410" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="162" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">WebGL</text><rect x="150" y="148" width="367" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="194" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Screen</text><rect x="150" y="180" width="280" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="226" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Timezone</text><rect x="150" y="212" width="183" height="20" rx="6" fill="#ef6a6a"/></svg><figcaption>ພະລັງການລະບຸຕົວຕົນຂອງສັນຍານລາຍນິ້ວມືທົ່ວໄປ (ຕົວຢ່າງ; canvas ປະມານ 5.7 ບິດຕໍ່ EFF).</figcaption></figure>
+<section class="i4data">
+<h2>ພູມສັນຖານຂອງລາຍນິ້ວມືຂອງຕົວທ່ອງເວັບ (ຄາດຄະເນປີ 2026)</h2>
+<p>ຕົວເລກຂ້າງລຸ່ມນີ້ແມ່ນການຄາດຄະເນ 2026 ທີ່ສ້າງຂຶ້ນຈາກພື້ນຖານການຄົ້ນຄວ້າທີ່ຈັດພີມມາ (EFF Panopticlick 2010, AmIUnique 2016, ເຊື່ອງຢູ່ໃນຝູງຊົນ 2018) ບວກກັບເວລາ extrapolation - ບໍ່ແມ່ນການວັດແທກຄັ້ງທໍາອິດ, ສໍາລັບການອ້າງອີງເທົ່ານັ້ນ.</p>
+<table>
+<tr><th>ສັນຍານ</th><th>ມູນຄ່າ</th></tr><tr><td>ລາຍນິ້ວມືຂອງເດັສທັອບທີ່ເປັນເອກະລັກ</td><td>~83.6% (Panopticlick) ຫາ ~89.4% (AmIUnique) ພື້ນຖານ; ຍັງຫຼາຍກວ່າ 80% ໃນປີ 2026 ເມື່ອປິດການຕ້ານການລາຍນິ້ວມື</td></tr><tr><td>ລາຍນິ້ວມືມືຖືທີ່ເປັນເອກະລັກ</td><td>~18.5% (ເຊື່ອງ​ຕົວ​ຢູ່​ໃນ​ຝູງ​ຊົນ 2018​) - ຕ​່​ໍ​າ​, ເນື່ອງ​ຈາກ​ວ່າ​ໂທລະ​ສັບ​ຕ່າງໆ​ແມ່ນ​ເປັນ​ເອ​ກະ​ລັກ​ຫຼາຍ</td></tr><tr><td>ຂໍ້ມູນລາຍນິ້ວມືທັງໝົດ</td><td>~18.1 bits ພື້ນຖານ, ປະມານ 1 ໃນ 286,000 ຕົວທ່ອງເວັບ</td></tr><tr><td>Canvas ສັນຍານດຽວ</td><td>~5.7 bits ຂອງ entropy ເພີ່ມ (EFF)</td></tr><tr><td>ສັນຍານດຽວທີ່ເຂັ້ມແຂງທີ່ສຸດ</td><td>ຊຸດຕົວອັກສອນ (ປະມານ 34% ສາມາດລະບຸຕົວໄດ້), User-Agent, canvas, WebGL renderer, screen</td></tr><tr><td>ສ່ວນຂະຫຍາຍຂອງຕົວທ່ອງເວັບ</td><td>ປະມານ 56.86% ຂອງຜູ້ໃຊ້ມີຊຸດຂະຫຍາຍທີ່ເປັນເອກະລັກ</td></tr><tr><td>ຜົນກະທົບຂອງການຕ້ານການລາຍນິ້ວມື</td><td>ຕົວທ່ອງເວັບ Tor, Brave ແລະ Safari ITP ສາມາດຕັດຄວາມເປັນເອກະລັກໂດຍການເຮັດໃຫ້ສັນຍານປົກກະຕິຫຼືປິດກັ້ນ.</td></tr>
+</table>
+<p><small>ພື້ນຖານການຄາດຄະເນ: ພື້ນຖານການຄົ້ນຄວ້າສາທາລະນະ (EFF / AmIUnique / Hiding in the Crowd) ບວກກັບເວລາພິເສດ; ບໍ່ແມ່ນການວັດແທກດ້ວຍມືທໍາອິດແລະການປ່ຽນແປງຍ້ອນວ່າຕົວທ່ອງເວັບແລະການຕໍ່ຕ້ານການພິມນິ້ວມືພັດທະນາ.</small></p>
+</section>
+<div class="faq"><h2>FAQ</h2>
+<h3>ຂໍ້ມູນຂອງຂ້ອຍຖືກສົ່ງໄປທຸກບ່ອນບໍ?</h3>
+<p>ບໍ່. ການສະແກນເຮັດວຽກທັງໝົດຢູ່ໃນບຣາວເຊີຂອງທ່ານໂດຍໃຊ້ APIs ເວັບມາດຕະຖານ; ຄ່າແມ່ນສະແດງຢູ່ໃນຫນ້າແລະບໍ່ເຄີຍອັບໂຫລດ.</p>
+<h3>ສະຕຣິງ User-Agent ແມ່ນຫຍັງ?</h3>
+<p>ມັນເປັນແຖວທີ່ຕົວທ່ອງເວັບຂອງທ່ານສົ່ງກັບທຸກໆຄໍາຮ້ອງຂໍທີ່ຕັ້ງຊື່ຂອງຕົວທ່ອງເວັບ, ຮຸ່ນຂອງມັນແລະລະບົບປະຕິບັດການ. ມັນແມ່ນ ໜຶ່ງ ໃນສັນຍານລາຍນິ້ວມືທີ່ເກົ່າແກ່ທີ່ສຸດແລະພື້ນຖານທີ່ສຸດ.</p>
+<h3>ເປັນຫຍັງ hash canvas ຈຶ່ງສຳຄັນ?</h3>
+<p>ການແຕ້ມຮູບແລະການອ່ານຄືນຮູບ canvas ເປີດເຜີຍ GPU ຂະຫນາດນ້ອຍແລະຄວາມແຕກຕ່າງການສະແດງຕົວອັກສອນ, ຜະລິດ hash ທີ່ມັກຈະເປັນເອກະລັກຂອງອຸປະກອນຂອງທ່ານແລະມີຄວາມຫມັ້ນຄົງໃນທົ່ວກອງປະຊຸມ.</p>
+<h3>ການລ້າງ cookies ເຊື່ອງລາຍນິ້ວມືຂອງຂ້ອຍບໍ?</h3>
+<p>ບໍ່. ລາຍນິ້ວມືແມ່ນສ້າງຂຶ້ນຈາກຄຸນສົມບັດຂອງອຸປະກອນ ແລະ ບຣາວເຊີ, ບໍ່ແມ່ນຄຸກກີ້ທີ່ເກັບໄວ້, ສະນັ້ນ ມັນສາມາດຄົງຢູ່ໄດ້ຫຼັງຈາກທີ່ທ່ານລຶບລ້າງຄຸກກີ້ ຫຼື ໃຊ້ໂໝດສ່ວນຕົວ.</p>
+<h3>ຂ້ອຍຈະຫຼຸດລາຍນິ້ວມືໄດ້ແນວໃດ?</h3>
+<p>ໃຊ້ຕົວທ່ອງເວັບທີ່ເຮັດໃຫ້ສັນຍານປົກກະຕິ (ເຊັ່ນ Tor Browser ຫຼື Brave), ປັບປຸງຕົວທ່ອງເວັບຂອງທ່ານ, ແລະຫຼີກເວັ້ນຕົວອັກສອນທີ່ຫາຍາກ, ສ່ວນຂະຫຍາຍແລະການຕັ້ງຄ່າຫນ້າຈໍທີ່ເຮັດໃຫ້ທ່ານໂດດເດັ່ນ.</p>
+<h3>ຄ່າເຫຼົ່ານີ້ຖືກຕ້ອງບໍ?</h3>
+<p>ພວກເຂົາເຈົ້າໄດ້ຖືກອ່ານໂດຍກົງຈາກຕົວທ່ອງເວັບຂອງທ່ານ, ດັ່ງນັ້ນພວກເຂົາສະທ້ອນໃຫ້ເຫັນເຖິງສິ່ງທີ່ເວັບໄຊທ໌ໃດສາມາດເຫັນໄດ້. ຄຸນສົມບັດບາງຢ່າງ (ອຸປະກອນຄວາມຈຳ, ຜູ້ຂາຍ, ແພລດຟອມ) ຖືກຍົກເລີກ ຫຼືປະມານ ແລະອາດຈະຫາຍໄປ.</p>
+</div>
+<div class="related"><h2>ເອົາ Quark Browser</h2><p>Quark Browser ເປັນຕົວທ່ອງເວັບ AI ທີ່ມີນ້ໍາຫນັກເບົາ. ດາວໂຫລດມັນສໍາລັບ Windows, macOS, Android, iOS ຫຼືເວັບ:</p>
+<p><a href="https://browserquark.com/download/">Quark Browser - ດາວ​ໂຫຼດ​ທຸກ​ເວ​ທີ​</a></p></div>
+<div class="sources"><h2>ເອກະສານອ້າງອີງ</h2><ul><li><a href="https://en.wikipedia.org/wiki/Device_fingerprint" rel="nofollow noopener" target="_blank">ລາຍນິ້ວມືຂອງອຸປະກອນ - Wikipedia</a></li><li><a href="https://coveryourtracks.eff.org/" rel="nofollow noopener" target="_blank">EFF Cover Your Tracks</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator" rel="nofollow noopener" target="_blank">MDN - Navigator API</a></li><li><a href="https://amiunique.org/" rel="nofollow noopener" target="_blank">ໂຄງການຄົ້ນຄວ້າ AmIUnique</a></li></ul></div>
+</main>
+<footer>ລວບລວມໂດຍ Zhou Yu ຈາກການຄົ້ນຄວ້າສາທາລະນະ (EFF Panopticlick, AmIUnique, ເຊື່ອງຢູ່ໃນຝູງຊົນ) ແລະ MDN Web Docs. ສໍາລັບການອ້າງອິງເທົ່ານັ້ນ; ການສະແກນສົດຈະອ່ານຕົວທ່ອງເວັບຂອງທ່ານເອງ.<br><a href="/about-zhouyu/" rel="author">ກ່ຽວ​ກັບ​ຜູ້​ຂຽນ​: Zhou Yu​</a> · MIT License</footer>
+</div>
+<script>window.FPL={"ua": "User-Agent", "platform": "ເວທີ", "vendor": "ຜູ້ຂາຍຕົວທ່ອງເວັບ", "langs": "ພາສາ", "tz": "ເຂດເວລາ", "tzoff": "ຊົດເຊີຍ UTC (ນາທີ)", "screen": "ໜ້າຈໍ", "viewport": "ຊ່ອງເບິ່ງ", "depth": "ຄວາມເລິກຂອງສີ", "dpr": "ອັດຕາສ່ວນ Pixel", "cores": "ຫຼັກ CPU", "mem": "ໜ່ວຍຄວາມຈຳອຸປະກອນ (GB)", "touch": "ຈຸດສໍາພັດສູງສຸດ", "canvas": "Canvas ລາຍນິ້ວມື", "webglv": "ຜູ້ຂາຍ WebGL", "webglr": "ຕົວສະແດງ WebGL", "webglf": "WebGL ລາຍນິ້ວມື", "audio": "ລາຍນິ້ວມືສຽງ", "cookies": "ເປີດໃຊ້ຄຸກກີ້ແລ້ວ", "dnt": "Do Not Track", "storage": "ການເກັບຮັກສາທ້ອງຖິ່ນ", "fonts": "ຟອນທີ່ກວດພົບ (ຕົວຢ່າງ)", "uniqueness": "ບິດການລະບຸໂດຍປະມານ", "field": "ສັນຍານ", "value": "ມູນຄ່າ"};</script>
+<script src="/app.js"></script>
+</body></html>
