@@ -1,3 +1,7 @@
-# 夸克
+# trimbley.github.io
 
-官网: https://browserquark.com/
+Client-side browser fingerprint & User-Agent viewer (12 languages).
+
+Live: https://trimbley.github.io/
+
+MIT License.
