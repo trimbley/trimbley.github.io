@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ลายนิ้วมือของเบราว์เซอร์ &amp; User-Agent Viewer - ตรวจสอบสิ่งที่เบราว์เซอร์ของคุณรั่วไหล</title>
+<meta name="description" content="เครื่องมือฝั่งไคลเอ็นต์ฟรี: ดูลายนิ้วมือ User-Agent, Canvas และ WebGL ของเบราว์เซอร์ของคุณ ภาษา เขตเวลา หน้าจอ และฮาร์ดแวร์ - เครื่องมือติดตามสัญญาณที่ใช้ในการระบุตัวคุณ">
+<link rel="canonical" href="https://trimbley.github.io/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://trimbley.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://trimbley.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://trimbley.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://trimbley.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://trimbley.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://trimbley.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://trimbley.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://trimbley.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://trimbley.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://trimbley.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://trimbley.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://trimbley.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://trimbley.github.io/">
+<meta property="og:title" content="ลายนิ้วมือของเบราว์เซอร์ &amp; User-Agent Viewer - ตรวจสอบสิ่งที่เบราว์เซอร์ของคุณรั่วไหล"><meta property="og:description" content="เครื่องมือฝั่งไคลเอ็นต์ฟรี: ดูลายนิ้วมือ User-Agent, Canvas และ WebGL ของเบราว์เซอร์ของคุณ ภาษา เขตเวลา หน้าจอ และฮาร์ดแวร์ - เครื่องมือติดตามสัญญาณที่ใช้ในการระบุตัวคุณ"><meta property="og:type" content="website"><meta property="og:url" content="https://trimbley.github.io/th/"><meta property="og:image" content="https://trimbley.github.io/img/cover_th.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "ลายนิ้วมือของเบราว์เซอร์ & User-Agent Viewer - ตรวจสอบสิ่งที่เบราว์เซอร์ของคุณรั่วไหล",
+   "url": "https://trimbley.github.io/th/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "th",
+   "description": "เครื่องมือฝั่งไคลเอ็นต์ฟรี: ดูลายนิ้วมือ User-Agent, Canvas และ WebGL ของเบราว์เซอร์ของคุณ ภาษา เขตเวลา หน้าจอ และฮาร์ดแวร์ - เครื่องมือติดตามสัญญาณที่ใช้ในการระบุตัวคุณ",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Zhou Yu",
+    "url": "https://trimbley.github.io/about-zhouyu/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "th",
+   "url": "https://trimbley.github.io/th/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "ข้อมูลของฉันถูกส่งไปที่ใดหรือไม่?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ไม่ การสแกนจะทำงานทั้งหมดในเบราว์เซอร์ของคุณโดยใช้ API เว็บมาตรฐาน ค่าจะแสดงบนหน้าและไม่เคยอัปโหลด"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "สตริง User-Agent คืออะไร?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "เป็นบรรทัดที่เบราว์เซอร์ของคุณส่งไปพร้อมกับทุกคำขอที่ระบุชื่อเบราว์เซอร์ เวอร์ชัน และระบบปฏิบัติการ เป็นหนึ่งในสัญญาณลายนิ้วมือที่เก่าแก่และพื้นฐานที่สุด"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "เหตุใดแฮชแคนวาสจึงมีความสำคัญ",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "การวาดและอ่านกลับภาพแคนวาสเผยให้เห็น GPU เล็กๆ น้อยๆ และความแตกต่างในการแสดงแบบอักษร ทำให้เกิดแฮชที่มักจะมีลักษณะเฉพาะสำหรับอุปกรณ์ของคุณและมีเสถียรภาพตลอดเซสชัน"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "การล้างคุกกี้จะซ่อนลายนิ้วมือของฉันหรือไม่?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ไม่ ลายนิ้วมือถูกสร้างขึ้นจากคุณสมบัติของอุปกรณ์และเบราว์เซอร์ ไม่ใช่คุกกี้ที่จัดเก็บ ดังนั้นจึงสามารถคงอยู่ได้หลังจากที่คุณล้างคุกกี้หรือใช้โหมดส่วนตัว"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ฉันจะลดลายนิ้วมือได้อย่างไร?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ใช้เบราว์เซอร์ที่ทำให้สัญญาณเป็นมาตรฐาน (เช่น เบราว์เซอร์ Tor หรือ Brave) อัปเดตเบราว์เซอร์ของคุณอยู่เสมอ และหลีกเลี่ยงแบบอักษร ส่วนขยาย และการตั้งค่าหน้าจอที่หายากซึ่งทำให้คุณโดดเด่น"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ค่าเหล่านี้ถูกต้องหรือไม่",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ข้อมูลเหล่านี้จะอ่านโดยตรงจากเบราว์เซอร์ของคุณ ดังนั้นจึงสะท้อนถึงสิ่งที่เว็บไซต์ต่างๆ สามารถมองเห็นได้ คุณสมบัติบางอย่าง (deviceMemory, ผู้จำหน่าย, แพลตฟอร์ม) เลิกใช้แล้วหรือประมาณการณ์และอาจขาดหายไป"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">ภาษา: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <strong>ไทย</strong> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>ลายนิ้วมือของเบราว์เซอร์ &amp; โปรแกรมดู User-Agent</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_th.webp"><img src="/img/cover_th.png" alt="ลายนิ้วมือของเบราว์เซอร์และภาพประกอบเครื่องมือแสดง User-Agent" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ลายนิ้วมือของเบราว์เซอร์ &amp; โปรแกรมดู User-Agent - เครื่องมือติดตามสัญญาณรวมกันเพื่อระบุเบราว์เซอร์</figcaption></figure>
+<p>ทุกเบราว์เซอร์จะรั่วไหลชุดสัญญาณ - User-Agent, Canvas และ WebGL เรนเดอร์, แบบอักษร, ภาษา, เขตเวลา และขนาดหน้าจอ - ซึ่งสามารถระบุตัวคุณได้โดยไม่ต้องใช้คุกกี้ เครื่องมือนี้จะอ่านสัญญาณเหล่านั้นในเบราว์เซอร์ของคุณและแสดงให้คุณเห็น ไม่มีการอัพโหลดอะไรเลย การสแกนจะทำงานบนอุปกรณ์ของคุณทั้งหมด</p>
+<section class="tool"><h2>ลายนิ้วมือเบราว์เซอร์ของคุณตอนนี้</h2><p class="note">อ่านสดจากเบราว์เซอร์ของคุณ ค่ายังคงอยู่ในหน้านี้ - ไม่มีการส่งสิ่งใดไปยังเซิร์ฟเวอร์</p><div class="btns"><button id="rescan">สแกนซ้ำ</button><button id="copyjson">คัดลอกเป็น JSON</button></div><table id="fp"></table></section>
+<h2>ลายนิ้วมือของเบราว์เซอร์คืออะไร?</h2><p>ลายนิ้วมือของเบราว์เซอร์เป็นโปรไฟล์ที่สร้างจากคุณสมบัติที่เบราว์เซอร์ของคุณเปิดเผยต่อเว็บไซต์ใดๆ: สตริง User-Agent, แบบอักษรที่ติดตั้ง, ความละเอียดหน้าจอ, เขตเวลา, รายการภาษา และวิธีที่อุปกรณ์ของคุณแสดงผลกราฟิกผ่านแคนวาสและ WebGL เนื่องจากชุดค่าผสมมักจะไม่ซ้ำกัน ไซต์จึงสามารถจดจำคุณได้ในการเข้าชมในภายหลัง แม้ว่าคุณจะบล็อกคุกกี้หรือใช้โหมดส่วนตัวก็ตาม</p>
+<figure><svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="เบราว์เซอร์"><rect x="2" y="2" width="716" height="146" rx="14" fill="#fafcff" stroke="#e3ecfb"/><rect x="20" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="94" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">เบราว์เซอร์</text><path d="M168 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="200" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="274" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">สัญญาณ</text><path d="M348 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="380" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="454" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">รวม + แฮช</text><path d="M528 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="560" y="46" width="148" height="58" rx="12" fill="#0071e3" stroke="#cfe0ff"/><text x="634" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">ลายนิ้วมือ</text><text x="94" y="128" font-family="system-ui,Arial" font-size="11" fill="#7088b0" text-anchor="middle">UA · Canvas · WebGL · Fonts · TZ</text></svg><figcaption>สัญญาณจะถูกรวบรวม รวม และแฮชไว้ในตัวระบุลายนิ้วมือเดียว</figcaption></figure>
+<h2>วิธีการทำงานของ Canvas และ WebGL ลายพิมพ์ลายนิ้วมือ</h2><p>เมื่อเพจดึงข้อความและรูปร่างที่ซ่อนอยู่บนผืนผ้าใบและอ่านพิกเซลด้านหลัง ความแตกต่างเล็กๆ น้อยๆ ใน GPU ของคุณ ไดรเวอร์กราฟิก และการแสดงแบบอักษรจะสร้างแฮชรูปภาพที่เสถียรซึ่งเฉพาะกับเครื่องของคุณ การพิมพ์ลายนิ้วมือ WebGL จะอ่านผู้จำหน่ายและผู้เรนเดอร์ GPU ที่ไม่ได้ปิดบังในลักษณะเดียวกัน สัญญาณทั้งสองนี้มีประสิทธิภาพเนื่องจากรอดพ้นจากการล้างคุกกี้ส่วนใหญ่และคงอยู่ตลอดเซสชัน</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_th.webp"><img src="/img/board_th.png" alt="แผนภาพแหล่งที่มาของเอนโทรปีของลายนิ้วมือของเบราว์เซอร์" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>วิธีสร้างลายนิ้วมือของเบราว์เซอร์: สัญญาณจำนวนมากถูกรวมและแฮชไว้ในตัวระบุตัวเดียว</figcaption></figure>
+<h2>สัญญาณไหนเปิดเผยได้มากที่สุด</h2><p>นักวิจัยวัดพลังการระบุตัวตนเป็นบิตของเอนโทรปี ยิ่งบิตมากหมายถึงมีคนแบ่งปันคุณค่าของคุณน้อยลง การศึกษาที่ตีพิมพ์ได้ระบุลายนิ้วมือเต็มรูปแบบประมาณ 18 บิต โดยมีแบบอักษร, User-Agent, Canvas และตัวเรนเดอร์ WebGL เป็นหนึ่งในผู้มีส่วนร่วมที่แข็งแกร่งที่สุด แผนภูมิด้านล่างแสดงน้ำหนักสัมพัทธ์ของแหล่งที่มาหลัก</p>
+<figure><svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="การระบุกำลัง (บิต)"><rect x="2" y="2" width="716" height="246" rx="14" fill="#fff7f7" stroke="#fde2e2"/><text x="20" y="30" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="700" fill="#b91c1c">การระบุกำลัง (บิต)</text><text x="20" y="66" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Fonts</text><rect x="150" y="52" width="496" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="98" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">User-Agent</text><rect x="150" y="84" width="432" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="130" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Canvas</text><rect x="150" y="116" width="410" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="162" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">WebGL</text><rect x="150" y="148" width="367" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="194" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Screen</text><rect x="150" y="180" width="280" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="226" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Timezone</text><rect x="150" y="212" width="183" height="20" rx="6" fill="#ef6a6a"/></svg><figcaption>พลังการระบุสัมพัทธ์ของสัญญาณลายนิ้วมือทั่วไป (ตัวอย่าง แคนวาสประมาณ 5.7 บิตต่อ EFF)</figcaption></figure>
+<section class="i4data">
+<h2>ภูมิทัศน์ลายนิ้วมือของเบราว์เซอร์ (ประมาณการปี 2026)</h2>
+<p>ตัวเลขด้านล่างนี้เป็นประมาณการปี 2026 ที่สร้างจากข้อมูลพื้นฐานการวิจัยที่เผยแพร่ (EFF Panopticlick 2010, AmIUnique 2016, Hiding in the Crowd 2018) บวกกับการคาดการณ์เวลา - ไม่ใช่การวัดโดยตรง สำหรับการอ้างอิงเท่านั้น</p>
+<table>
+<tr><th>สัญญาณ</th><th>ความคุ้มค่า</th></tr><tr><td>ลายนิ้วมือบนเดสก์ท็อปที่ไม่เหมือนใคร</td><td>~83.6% (Panopticlick) ถึง ~89.4% (AmIUnique) พื้นฐาน; ยังคงมากกว่า 80% ในปี 2569 เมื่อปิดการป้องกันลายนิ้วมือ</td></tr><tr><td>ลายนิ้วมือมือถือที่เป็นเอกลักษณ์</td><td>~18.5% (ซ่อนตัวอยู่ในฝูงชน 2018) - ต่ำกว่า เนื่องจากโทรศัพท์มีความเป็นเนื้อเดียวกันมากกว่า</td></tr><tr><td>เอนโทรปีลายนิ้วมือทั้งหมด</td><td>~18.1 บิตพื้นฐาน ประมาณ 1 ใน 286,000 เบราว์เซอร์</td></tr><tr><td>สัญญาณ Canvas เพียงอย่างเดียว</td><td>เอนโทรปีเพิ่ม ~5.7 บิต (EFF)</td></tr><tr><td>สัญญาณเดี่ยวที่แข็งแกร่งที่สุด</td><td>ชุดแบบอักษร (ระบุได้ประมาณ 34%), User-Agent, แคนวาส, ตัวเรนเดอร์ WebGL, หน้าจอ</td></tr><tr><td>ส่วนขยายเบราว์เซอร์</td><td>ผู้ใช้ประมาณ 56.86% มีชุดส่วนขยายที่ไม่ซ้ำกัน</td></tr><tr><td>ผลของการต่อต้านลายนิ้วมือ</td><td>เบราว์เซอร์ Tor, Brave และ Safari ITP สามารถตัดความเป็นเอกลักษณ์ได้อย่างชัดเจนโดยการปรับมาตรฐานหรือบล็อกสัญญาณ</td></tr>
+</table>
+<p><small>พื้นฐานการประมาณการ: เส้นฐานการวิจัยสาธารณะ (EFF / AmIUnique / การซ่อนตัวในฝูงชน) บวกการประมาณค่าเวลา ไม่ใช่การวัดและการเปลี่ยนแปลงโดยตรงเมื่อเบราว์เซอร์และการป้องกันลายนิ้วมือพัฒนาขึ้น</small></p>
+</section>
+<div class="faq"><h2>FAQ</h2>
+<h3>ข้อมูลของฉันถูกส่งไปที่ใดหรือไม่?</h3>
+<p>ไม่ การสแกนจะทำงานทั้งหมดในเบราว์เซอร์ของคุณโดยใช้ API เว็บมาตรฐาน ค่าจะแสดงบนหน้าและไม่เคยอัปโหลด</p>
+<h3>สตริง User-Agent คืออะไร?</h3>
+<p>เป็นบรรทัดที่เบราว์เซอร์ของคุณส่งไปพร้อมกับทุกคำขอที่ระบุชื่อเบราว์เซอร์ เวอร์ชัน และระบบปฏิบัติการ เป็นหนึ่งในสัญญาณลายนิ้วมือที่เก่าแก่และพื้นฐานที่สุด</p>
+<h3>เหตุใดแฮชแคนวาสจึงมีความสำคัญ</h3>
+<p>การวาดและอ่านกลับภาพแคนวาสเผยให้เห็น GPU เล็กๆ น้อยๆ และความแตกต่างในการแสดงแบบอักษร ทำให้เกิดแฮชที่มักจะมีลักษณะเฉพาะสำหรับอุปกรณ์ของคุณและมีเสถียรภาพตลอดเซสชัน</p>
+<h3>การล้างคุกกี้จะซ่อนลายนิ้วมือของฉันหรือไม่?</h3>
+<p>ไม่ ลายนิ้วมือถูกสร้างขึ้นจากคุณสมบัติของอุปกรณ์และเบราว์เซอร์ ไม่ใช่คุกกี้ที่จัดเก็บ ดังนั้นจึงสามารถคงอยู่ได้หลังจากที่คุณล้างคุกกี้หรือใช้โหมดส่วนตัว</p>
+<h3>ฉันจะลดลายนิ้วมือได้อย่างไร?</h3>
+<p>ใช้เบราว์เซอร์ที่ทำให้สัญญาณเป็นมาตรฐาน (เช่น เบราว์เซอร์ Tor หรือ Brave) อัปเดตเบราว์เซอร์ของคุณอยู่เสมอ และหลีกเลี่ยงแบบอักษร ส่วนขยาย และการตั้งค่าหน้าจอที่หายากซึ่งทำให้คุณโดดเด่น</p>
+<h3>ค่าเหล่านี้ถูกต้องหรือไม่</h3>
+<p>ข้อมูลเหล่านี้จะอ่านโดยตรงจากเบราว์เซอร์ของคุณ ดังนั้นจึงสะท้อนถึงสิ่งที่เว็บไซต์ต่างๆ สามารถมองเห็นได้ คุณสมบัติบางอย่าง (deviceMemory, ผู้จำหน่าย, แพลตฟอร์ม) เลิกใช้แล้วหรือประมาณการณ์และอาจขาดหายไป</p>
+</div>
+<div class="related"><h2>รับ Quark Browser</h2><p>Quark Browser เป็นเบราว์เซอร์ AI น้ำหนักเบา ดาวน์โหลดสำหรับ Windows, macOS, Android, iOS หรือเว็บ:</p>
+<p><a href="https://browserquark.com/download/">Quark Browser - ดาวน์โหลดทุกแพลตฟอร์ม</a></p></div>
+<div class="sources"><h2>อ้างอิง</h2><ul><li><a href="https://en.wikipedia.org/wiki/Device_fingerprint" rel="nofollow noopener" target="_blank">ลายนิ้วมือของอุปกรณ์ - Wikipedia</a></li><li><a href="https://coveryourtracks.eff.org/" rel="nofollow noopener" target="_blank">EFF Cover Your Tracks</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator" rel="nofollow noopener" target="_blank">MDN - API เนวิเกเตอร์</a></li><li><a href="https://amiunique.org/" rel="nofollow noopener" target="_blank">โครงการวิจัย AmIUnique</a></li></ul></div>
+</main>
+<footer>เรียบเรียงโดย Zhou Yu จากการวิจัยสาธารณะ (EFF Panopticlick, AmIUnique, Hiding in the Crowd) และ MDN Web Docs สำหรับการอ้างอิงเท่านั้น การสแกนสดจะอ่านเบราว์เซอร์ของคุณเอง<br><a href="/about-zhouyu/" rel="author">เกี่ยวกับผู้เขียน: โจว หยู</a> · MIT License</footer>
+</div>
+<script>window.FPL={"ua": "User-Agent", "platform": "แพลตฟอร์ม", "vendor": "ผู้จำหน่ายเบราว์เซอร์", "langs": "ภาษา", "tz": "เขตเวลา", "tzoff": "ออฟเซ็ต UTC (นาที)", "screen": "หน้าจอ", "viewport": "วิวพอร์ต", "depth": "ความลึกของสี", "dpr": "อัตราส่วนพิกเซล", "cores": "แกนซีพียู", "mem": "หน่วยความจำอุปกรณ์ (GB)", "touch": "จุดสัมผัสสูงสุด", "canvas": "ลายนิ้วมือ Canvas", "webglv": "ผู้จำหน่าย WebGL", "webglr": "ตัวเรนเดอร์ WebGL", "webglf": "ลายนิ้วมือ WebGL", "audio": "ลายนิ้วมือเสียง", "cookies": "เปิดใช้งานคุกกี้แล้ว", "dnt": "Do Not Track", "storage": "ที่จัดเก็บในตัวเครื่อง", "fonts": "แบบอักษรที่ตรวจพบ (ตัวอย่าง)", "uniqueness": "บิตการระบุโดยประมาณ", "field": "สัญญาณ", "value": "ความคุ้มค่า"};</script>
+<script src="/app.js"></script>
+</body></html>
