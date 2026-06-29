@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="my"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Browser Fingerprint &amp; User-Agent Viewer - သင့်ဘရောက်ဆာပေါက်ကြားမှုအား စစ်ဆေးပါ။</title>
+<meta name="description" content="အခမဲ့ client-side tool- သင့်ဘရောက်ဆာ၏ User-Agent၊ ကင်းဗတ်စ်နှင့် WebGL လက်ဗွေ၊ ဘာသာစကားများ၊ အချိန်ဇုန်၊ မျက်နှာပြင်နှင့် ဟာ့ဒ်ဝဲ - သင့်အားခွဲခြားသတ်မှတ်ရန် တိကျသောအချက်ပြမှုများကို ခြေရာခံသူများအသုံးပြုသည်။">
+<link rel="canonical" href="https://trimbley.github.io/my/">
+<link rel="alternate" hreflang="zh-Hans" href="https://trimbley.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://trimbley.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://trimbley.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://trimbley.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://trimbley.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://trimbley.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://trimbley.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://trimbley.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://trimbley.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://trimbley.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://trimbley.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://trimbley.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://trimbley.github.io/">
+<meta property="og:title" content="Browser Fingerprint &amp; User-Agent Viewer - သင့်ဘရောက်ဆာပေါက်ကြားမှုအား စစ်ဆေးပါ။"><meta property="og:description" content="အခမဲ့ client-side tool- သင့်ဘရောက်ဆာ၏ User-Agent၊ ကင်းဗတ်စ်နှင့် WebGL လက်ဗွေ၊ ဘာသာစကားများ၊ အချိန်ဇုန်၊ မျက်နှာပြင်နှင့် ဟာ့ဒ်ဝဲ - သင့်အားခွဲခြားသတ်မှတ်ရန် တိကျသောအချက်ပြမှုများကို ခြေရာခံသူများအသုံးပြုသည်။"><meta property="og:type" content="website"><meta property="og:url" content="https://trimbley.github.io/my/"><meta property="og:image" content="https://trimbley.github.io/img/cover_my.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Browser Fingerprint & User-Agent Viewer - သင့်ဘရောက်ဆာပေါက်ကြားမှုအား စစ်ဆေးပါ။",
+   "url": "https://trimbley.github.io/my/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "my",
+   "description": "အခမဲ့ client-side tool- သင့်ဘရောက်ဆာ၏ User-Agent၊ ကင်းဗတ်စ်နှင့် WebGL လက်ဗွေ၊ ဘာသာစကားများ၊ အချိန်ဇုန်၊ မျက်နှာပြင်နှင့် ဟာ့ဒ်ဝဲ - သင့်အားခွဲခြားသတ်မှတ်ရန် တိကျသောအချက်ပြမှုများကို ခြေရာခံသူများအသုံးပြုသည်။",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Zhou Yu",
+    "url": "https://trimbley.github.io/about-zhouyu/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "my",
+   "url": "https://trimbley.github.io/my/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "ကျွန်ုပ်၏ဒေတာကို မည်သည့်နေရာတွင်မဆို ပေးပို့နိုင်ပါသလား။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "နံပါတ်၊ စကင်န်သည် စံဝဘ် API များကို အသုံးပြု၍ သင့်ဘရောက်ဆာတွင် လုံးလုံးလျားလျား လုပ်ဆောင်ပါသည်။ တန်ဖိုးများကို စာမျက်နှာပေါ်တွင် ပြသထားပြီး မည်သည့်အခါမျှ မတင်ပါ။"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "User-Agent စာကြောင်းဆိုတာဘာလဲ။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "၎င်းသည် ဘရောက်ဆာ၊ ၎င်း၏ဗားရှင်းနှင့် လည်ပတ်မှုစနစ်ကို အမည်ပေးသည့် တောင်းဆိုမှုတိုင်းဖြင့် သင့်ဘရောက်ဆာမှ ပေးပို့သည့် လိုင်းတစ်ခုဖြစ်သည်။ ၎င်းသည် ရှေးအကျဆုံးနှင့် အခြေခံအကျဆုံး လက်ဗွေအချက်ပြများထဲမှ တစ်ခုဖြစ်သည်။"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ပတ္တူ hash သည် အဘယ်ကြောင့် အရေးကြီးသနည်း။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ကင်းဗတ်ပုံတစ်ပုံကို ဆွဲခြင်းနှင့် ပြန်ဖတ်ခြင်းသည် သေးငယ်သော GPU နှင့် ဖောင့်ပုံဖေါ်ခြင်းဆိုင်ရာ ကွဲပြားမှုများကို ထင်ရှားစေပြီး၊ သင်၏စက်ပစ္စည်းအတွက် မကြာခဏထူးခြားပြီး ဆက်ရှင်များတစ်လျှောက် တည်ငြိမ်သော hash တစ်ခုကို ထုတ်လုပ်ပေးပါသည်။"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ကွတ်ကီးများကို ရှင်းလင်းခြင်းသည် ကျွန်ုပ်၏ လက်ဗွေကို ဝှက်ထားပါသလား။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "နံပါတ်။ လက်ဗွေကို စက်နှင့် ဘရောင်ဇာ၏ ဂုဏ်သတ္တိများမှ တည်ဆောက်ထားခြင်းဖြစ်ပြီး သိမ်းဆည်းထားသော ကွတ်ကီးများမဟုတ်သောကြောင့် သင်ကွတ်ကီးများကို ရှင်းပစ်ပြီးနောက် သို့မဟုတ် သီးသန့်မုဒ်ကို အသုံးပြုပြီးနောက် ၎င်းသည် ဆက်ရှိနေနိုင်သည်။"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ကျွန်ုပ်၏လက်ဗွေကို မည်သို့လျှော့ချနိုင်မည်နည်း။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "အချက်ပြမှုများကို ပုံမှန်ဖြစ်စေသော (ဥပမာ Tor ဘရောက်ဆာ သို့မဟုတ် Brave)၊ သင့်ဘရောက်ဆာကို အပ်ဒိတ်လုပ်ထားပါ၊ ရှားပါးသော ဖောင့်များ၊ တိုးချဲ့မှုများနှင့် မျက်နှာပြင်ဆက်တင်များကို ရှောင်ကြဉ်ပါ။"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ဤတန်ဖိုးများသည် မှန်ကန်ပါသလား။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "၎င်းတို့ကို သင့်ဘရောက်ဆာမှ တိုက်ရိုက်ဖတ်ရှုနိုင်သောကြောင့် ၎င်းတို့သည် မည်သည့်ဝဘ်ဆိုဒ်ကိုမဆို မြင်နိုင်သည်ကို ထင်ဟပ်စေသည်။ အချို့သောဂုဏ်သတ္တိများ (deviceMemory, vendor, platform) ကို ရပ်ဆိုင်းထားသည် သို့မဟုတ် အနီးစပ်ဆုံးဖြစ်ပြီး ပျောက်ဆုံးနေနိုင်ပါသည်။"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">ဘာသာစကား: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <strong>မြန်မာ</strong></nav>
+<h1>ဘရောင်ဇာ လက်ဗွေနှင့် User-Agent ကြည့်ရှုမှု</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_my.webp"><img src="/img/cover_my.png" alt="ဘရောင်ဇာလက်ဗွေနှင့် User-Agent ကြည့်ရှုကိရိယာ သရုပ်ဖော်ပုံ" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ဘရောင်ဇာလက်ဗွေနှင့် User-Agent ကြည့်ရှုသူ - ဘရောက်ဆာကိုဖော်ထုတ်ရန် အချက်ပြခြေရာခံကိရိယာများ ပေါင်းစပ်ထားသည်။</figcaption></figure>
+<p>ဘရောက်ဆာတိုင်းသည် သင့် User-Agent၊ ပတ္တူနှင့် WebGL တင်ဆက်မှု၊ ဖောင့်များ၊ ဘာသာစကား၊ အချိန်ဇုန်နှင့် မျက်နှာပြင်အရွယ်အစား- သင့်အား မည်သည့်ကွတ်ကီးမှ မလိုအပ်ဘဲ အတူတကွ သိရှိနိုင်မည်ဖြစ်သည်။ ဤကိရိယာသည် သင့်ဘရောက်ဆာရှိ အဆိုပါအချက်ပြမှုများကို စက်တွင်းတွင်ဖတ်ပြီး ၎င်းတို့အား သင့်အား ပြသပေးသည်။ မည်သည့်အရာကိုမျှ အပ်လုဒ်မလုပ်ပါ။ စကင်န်သည် သင့်စက်ပေါ်တွင် လုံးလုံးလျားလျား အလုပ်လုပ်သည်။</p>
+<section class="tool"><h2>သင်၏ဘရောက်ဆာ လက်ဗွေ၊ ယခုပင်</h2><p class="note">သင့်ဘရောက်ဆာမှ တိုက်ရိုက်ဖတ်ပါ။ တန်ဖိုးများသည် ဤစာမျက်နှာပေါ်တွင် ရှိနေသည် - မည်သည့်အရာကိုမျှ ဆာဗာသို့ ပေးပို့ခြင်းမပြုပါ။</p><div class="btns"><button id="rescan">ပြန်စကင်န်ဖတ်ပါ။</button><button id="copyjson">JSON အဖြစ် ကူးယူပါ။</button></div><table id="fp"></table></section>
+<h2>ဘရောက်ဆာ လက်ဗွေဆိုတာ ဘာလဲ။</h2><p>ဘရောင်ဇာလက်ဗွေသည် မည်သည့်ဝဘ်ဆိုက်ကိုမဆို သင့်ဘရောင်ဇာမှ ထိတွေ့နိုင်သော သတ္တိများမှ တည်ဆောက်ထားသော ပရိုဖိုင်တစ်ခုဖြစ်သည်- User-Agent စာကြောင်း၊ ထည့်သွင်းထားသော ဖောင့်များ၊ မျက်နှာပြင်ကြည်လင်ပြတ်သားမှု၊ အချိန်ဇုန်၊ ဘာသာစကားစာရင်းနှင့် သင့်စက်သည် ကင်းဗတ်စ်နှင့် WebGL မှတစ်ဆင့် ဂရပ်ဖစ်ကို မည်သို့ပြန်ဆိုမည်နည်း။ ပေါင်းစပ်မှုသည် မကြာခဏ ထူးခြားသောကြောင့်၊ သင်သည် ကွက်ကီးများကို ပိတ်ဆို့ခြင်း သို့မဟုတ် သီးသန့်မုဒ်ကို အသုံးပြုပါက နောက်ပိုင်းတွင် သင့်အား ဆိုက်တစ်ခုမှ မှတ်မိနိုင်မည်ဖြစ်သည်။</p>
+<figure><svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ဘရောက်ဆာ"><rect x="2" y="2" width="716" height="146" rx="14" fill="#fafcff" stroke="#e3ecfb"/><rect x="20" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="94" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">ဘရောက်ဆာ</text><path d="M168 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="200" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="274" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">အချက်ပြမှုများ</text><path d="M348 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="380" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="454" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">+ hash ကို ပေါင်းစပ်ပါ။</text><path d="M528 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="560" y="46" width="148" height="58" rx="12" fill="#0071e3" stroke="#cfe0ff"/><text x="634" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">လက်ဗွေရာ</text><text x="94" y="128" font-family="system-ui,Arial" font-size="11" fill="#7088b0" text-anchor="middle">UA · Canvas · WebGL · Fonts · TZ</text></svg><figcaption>အချက်ပြမှုများကို စုစည်းကာ ပေါင်းစပ်ကာ လက်ဗွေအမှတ်အသားတစ်ခုအဖြစ် ပေါင်းစပ်ထားသည်။</figcaption></figure>
+<h2>ကင်းဗတ်စ်နှင့် WebGL လက်ဗွေရာ အလုပ်လုပ်ပုံ</h2><p>စာမျက်နှာတစ်ခုသည် ဝှက်ထားသော စာသားနှင့် ပုံသဏ္ဍာန်များကို ကင်းဗတ်စ်တစ်ခုသို့ ဆွဲယူပြီး pixels များကို ပြန်ဖတ်သည့်အခါ၊ သင်၏ GPU၊ ဂရပ်ဖစ်ဒရိုက်ဗာနှင့် ဖောင့်ဖော်ခြင်းရှိ သေးငယ်သော ကွဲပြားမှုများသည် သင့်စက်အတွက် တိကျသည့် တည်ငြိမ်သောပုံရိပ် hash ကို ဖြစ်ပေါ်စေပါသည်။ WebGL လက်ဗွေရာသည် ဖုံးကွယ်ထားသော GPU ရောင်းချသူနှင့် သရုပ်ဖော်သူကို ထိုနည်းအတိုင်း ဖတ်သည်။ ဤအချက်နှစ်ခုသည် cookie အများစုကိုရှင်းလင်းခြင်းနှင့် ဆက်ရှင်များတစ်လျှောက်တွင် ဆက်လက်ရှင်သန်နေသောကြောင့် ၎င်းတို့သည် အားကောင်းပါသည်။</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_my.webp"><img src="/img/board_my.png" alt="ဘရောင်ဇာ၏ လက်ဗွေအင်ထရိုပီ ရင်းမြစ်များ၏ ပုံကြမ်း" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ဘရောင်ဇာတစ်ခု၏ လက်ဗွေကို တည်ဆောက်ပုံ- အချက်များစွာကို ပေါင်းစပ်ပြီး ခွဲခြားသတ်မှတ်မှုတစ်ခုအဖြစ် ပေါင်းစပ်ထားသည်။</figcaption></figure>
+<h2>မည်သည့်အချက်များ အများဆုံးဖော်ပြသနည်း။</h2><p>သုတေသီများသည် entropy bits တွင် ပါဝါကို ခွဲခြားသတ်မှတ်ခြင်းကို တိုင်းတာသည်- ပိုများသော bits သည် သင့်တန်ဖိုးကို မျှဝေသူနည်းပါးလာသည်ဟု ဆိုလိုသည်။ ထုတ်ဝေသည့်လေ့လာမှုများက အားအကောင်းဆုံးပံ့ပိုးသူများထဲမှ ဖောင့်များ၊ User-Agent၊ ကင်းဗတ်နှင့် WebGL သရုပ်ဖော်မှုတို့နှင့်အတူ လက်ဗွေရာ အပြည့်အစုံကို 18 bits ဝန်းကျင်တွင် ထည့်သွင်းထားသည်။ အောက်ဖော်ပြပါဇယားသည် ပင်မရင်းမြစ်များ၏ ဆွေမျိုးအလေးချိန်ကို ပြသည်။</p>
+<figure><svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ပါဝါ (bits) ခွဲခြားသတ်မှတ်ခြင်း"><rect x="2" y="2" width="716" height="246" rx="14" fill="#fff7f7" stroke="#fde2e2"/><text x="20" y="30" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="700" fill="#b91c1c">ပါဝါ (bits) ခွဲခြားသတ်မှတ်ခြင်း</text><text x="20" y="66" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Fonts</text><rect x="150" y="52" width="496" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="98" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">User-Agent</text><rect x="150" y="84" width="432" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="130" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Canvas</text><rect x="150" y="116" width="410" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="162" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">WebGL</text><rect x="150" y="148" width="367" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="194" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Screen</text><rect x="150" y="180" width="280" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="226" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Timezone</text><rect x="150" y="212" width="183" height="20" rx="6" fill="#ef6a6a"/></svg><figcaption>သာမာန်လက်ဗွေအချက်ပြမှုများ၏ ဆက်စပ်ခွဲခြားသတ်မှတ်ခြင်းစွမ်းအား (သရုပ်ဖော်ပုံ၊ ကင်းဗတ်စ် EFF တစ်ခုလျှင် 5.7 ဘစ်ခန့်)။</figcaption></figure>
+<section class="i4data">
+<h2>ဘရောင်ဇာ လက်ဗွေရာ အခင်းအကျင်း (2026 ခန့်မှန်းချက်)</h2>
+<p>အောက်တွင်ဖော်ပြထားသော ကိန်းဂဏန်းများသည် ထုတ်ဝေထားသော သုတေသနအခြေခံအချက်များမှ တည်ဆောက်ထားသော 2026 ခန့်မှန်းချက် (EFF Panopticlick 2010၊ AmIUnique 2016၊ လူစုလူဝေး 2018) နှင့် အချိန်ပေါင်းထည့်ခြင်း - ကိုးကားရန်အတွက်သာဖြစ်ပြီး၊ ပထမဆုံးလက်ဖြင့်တိုင်းတာခြင်းမဟုတ်ပါ။</p>
+<table>
+<tr><th>အချက်ပြ</th><th>တန်ဖိုး</th></tr><tr><td>ထူးခြားသော ဒက်စ်တော့လက်ဗွေများ</td><td>~83.6% (Panopticlick) မှ ~89.4% (AmIUnique) အခြေခံလိုင်း၊ Anti-fingerprinting ကိုပိတ်ထားသည့်အခါ 2026 တွင် 80% ကျော်ကျန်သေးသည်။</td></tr><tr><td>ထူးခြားသော မိုဘိုင်းလက်ဗွေရာများ</td><td>~18.5% (Crowd in the Hiding 2018) - ဖုန်းများသည် တစ်သားတည်းဖြစ်နေသောကြောင့်၊</td></tr><tr><td>စုစုပေါင်း လက်ဗွေအင်ထရိုပီ</td><td>~18.1 bits အခြေခံလိုင်း၊ အကြမ်းဖျင်းအားဖြင့် ဘရောက်ဆာ 286,000 တွင် 1 ခု</td></tr><tr><td>Canvas signal တစ်ခုတည်း</td><td>ထည့်ထားသော entropy ၏ ~ 5.7 bits (EFF)</td></tr><tr><td>အပြင်းထန်ဆုံး အချက်ပြမှုများ</td><td>ဖောင့်အစုံ (34% ခန့်ကို ခွဲခြားသိမြင်နိုင်သော)၊ User-Agent၊ ပတ္တူ၊ WebGL သရုပ်ဖော်မှု၊ မျက်နှာပြင်</td></tr><tr><td>ဘရောက်ဆာ တိုးချဲ့မှုများ</td><td>အသုံးပြုသူများ၏ 56.86% ခန့်တွင် ထူးခြားသော extension set တစ်ခုရှိသည်။</td></tr><tr><td>လက်ဗွေရာ ဆန့်ကျင်ရေး အကျိုးသက်ရောက်မှု</td><td>Tor Browser၊ Brave နှင့် Safari ITP သည် အချက်ပြမှုများကို ပုံမှန်ဖြစ်စေခြင်း သို့မဟုတ် ပိတ်ဆို့ခြင်းဖြင့် ထူးခြားမှုကို သိသိသာသာ ဖြတ်တောက်နိုင်သည်</td></tr>
+</table>
+<p><small>ခန့်မှန်းခြေ အခြေခံ- အများသူငှာ သုတေသနအခြေခံများ (EFF / AmIUnique / Hiding in the Crowd) နှင့် အချိန်ကို ပေါင်းထည့်ခြင်း၊ ဘရောက်ဆာများနှင့် လက်ဗွေရာဆန့်ကျင်ရေး ဆင့်ကဲပြောင်းလဲလာသည်နှင့်အမျှ ပထမဆုံးလက်ဖြင့် တိုင်းတာခြင်းနှင့် ပြောင်းလဲခြင်းမဟုတ်ပါ။</small></p>
+</section>
+<div class="faq"><h2>FAQ</h2>
+<h3>ကျွန်ုပ်၏ဒေတာကို မည်သည့်နေရာတွင်မဆို ပေးပို့နိုင်ပါသလား။</h3>
+<p>နံပါတ်၊ စကင်န်သည် စံဝဘ် API များကို အသုံးပြု၍ သင့်ဘရောက်ဆာတွင် လုံးလုံးလျားလျား လုပ်ဆောင်ပါသည်။ တန်ဖိုးများကို စာမျက်နှာပေါ်တွင် ပြသထားပြီး မည်သည့်အခါမျှ မတင်ပါ။</p>
+<h3>User-Agent စာကြောင်းဆိုတာဘာလဲ။</h3>
+<p>၎င်းသည် ဘရောက်ဆာ၊ ၎င်း၏ဗားရှင်းနှင့် လည်ပတ်မှုစနစ်ကို အမည်ပေးသည့် တောင်းဆိုမှုတိုင်းဖြင့် သင့်ဘရောက်ဆာမှ ပေးပို့သည့် လိုင်းတစ်ခုဖြစ်သည်။ ၎င်းသည် ရှေးအကျဆုံးနှင့် အခြေခံအကျဆုံး လက်ဗွေအချက်ပြများထဲမှ တစ်ခုဖြစ်သည်။</p>
+<h3>ပတ္တူ hash သည် အဘယ်ကြောင့် အရေးကြီးသနည်း။</h3>
+<p>ကင်းဗတ်ပုံတစ်ပုံကို ဆွဲခြင်းနှင့် ပြန်ဖတ်ခြင်းသည် သေးငယ်သော GPU နှင့် ဖောင့်ပုံဖေါ်ခြင်းဆိုင်ရာ ကွဲပြားမှုများကို ထင်ရှားစေပြီး၊ သင်၏စက်ပစ္စည်းအတွက် မကြာခဏထူးခြားပြီး ဆက်ရှင်များတစ်လျှောက် တည်ငြိမ်သော hash တစ်ခုကို ထုတ်လုပ်ပေးပါသည်။</p>
+<h3>ကွတ်ကီးများကို ရှင်းလင်းခြင်းသည် ကျွန်ုပ်၏ လက်ဗွေကို ဝှက်ထားပါသလား။</h3>
+<p>နံပါတ်။ လက်ဗွေကို စက်နှင့် ဘရောင်ဇာ၏ ဂုဏ်သတ္တိများမှ တည်ဆောက်ထားခြင်းဖြစ်ပြီး သိမ်းဆည်းထားသော ကွတ်ကီးများမဟုတ်သောကြောင့် သင်ကွတ်ကီးများကို ရှင်းပစ်ပြီးနောက် သို့မဟုတ် သီးသန့်မုဒ်ကို အသုံးပြုပြီးနောက် ၎င်းသည် ဆက်ရှိနေနိုင်သည်။</p>
+<h3>ကျွန်ုပ်၏လက်ဗွေကို မည်သို့လျှော့ချနိုင်မည်နည်း။</h3>
+<p>အချက်ပြမှုများကို ပုံမှန်ဖြစ်စေသော (ဥပမာ Tor ဘရောက်ဆာ သို့မဟုတ် Brave)၊ သင့်ဘရောက်ဆာကို အပ်ဒိတ်လုပ်ထားပါ၊ ရှားပါးသော ဖောင့်များ၊ တိုးချဲ့မှုများနှင့် မျက်နှာပြင်ဆက်တင်များကို ရှောင်ကြဉ်ပါ။</p>
+<h3>ဤတန်ဖိုးများသည် မှန်ကန်ပါသလား။</h3>
+<p>၎င်းတို့ကို သင့်ဘရောက်ဆာမှ တိုက်ရိုက်ဖတ်ရှုနိုင်သောကြောင့် ၎င်းတို့သည် မည်သည့်ဝဘ်ဆိုဒ်ကိုမဆို မြင်နိုင်သည်ကို ထင်ဟပ်စေသည်။ အချို့သောဂုဏ်သတ္တိများ (deviceMemory, vendor, platform) ကို ရပ်ဆိုင်းထားသည် သို့မဟုတ် အနီးစပ်ဆုံးဖြစ်ပြီး ပျောက်ဆုံးနေနိုင်ပါသည်။</p>
+</div>
+<div class="related"><h2>Quark Browser ကိုရယူပါ။</h2><p>Quark Browser သည် ပေါ့ပါးသော AI ဘရောက်ဆာတစ်ခုဖြစ်သည်။ ၎င်းကို Windows၊ macOS၊ Android၊ iOS သို့မဟုတ် ဝဘ်အတွက် ဒေါင်းလုဒ်လုပ်ပါ-</p>
+<p><a href="https://browserquark.com/download/">Quark Browser - အားလုံး-ပလပ်ဖောင်းဒေါင်းလုဒ်လုပ်ပါ။</a></p></div>
+<div class="sources"><h2>ကိုးကား</h2><ul><li><a href="https://en.wikipedia.org/wiki/Device_fingerprint" rel="nofollow noopener" target="_blank">စက်ပစ္စည်း လက်ဗွေ - Wikipedia</a></li><li><a href="https://coveryourtracks.eff.org/" rel="nofollow noopener" target="_blank">EFF Cover Your Tracks</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator" rel="nofollow noopener" target="_blank">MDN - Navigator API</a></li><li><a href="https://amiunique.org/" rel="nofollow noopener" target="_blank">AmIUnique သုတေသနပရောဂျက်</a></li></ul></div>
+</main>
+<footer>လူထုသုတေသန (EFF Panopticlick၊ AmIUnique၊ Hiding in the Crowd) နှင့် MDN Web Docs တို့မှ Zhou Yu မှ ပြုစုထားသည်။ အကိုးအကားအတွက်သာ; တိုက်ရိုက်စကင်န်သည် သင့်ကိုယ်ပိုင်ဘရောက်ဆာကို ဖတ်သည်။<br><a href="/about-zhouyu/" rel="author">ရေးသားသူ- Zhou Yu</a> · MIT License</footer>
+</div>
+<script>window.FPL={"ua": "User-Agent", "platform": "ပလပ်ဖောင်း", "vendor": "Browser ရောင်းချသူ", "langs": "ဘာသာစကားများ", "tz": "အချိန်ဇုန်", "tzoff": "UTC အော့ဖ်ဆက် (မိနစ်)", "screen": "မျက်နှာပြင်", "viewport": "ရှုခင်း", "depth": "အရောင်အတိမ်အနက်", "dpr": "Pixel အချိုး", "cores": "CPU Core များ", "mem": "စက်ပစ္စည်းမှတ်ဉာဏ် (GB)", "touch": "ထိတွေ့မှုအများဆုံးအချက်များ", "canvas": "Canvas လက်ဗွေရာ", "webglv": "WebGL ရောင်းချသူ", "webglr": "WebGL သရုပ်ဖော်", "webglf": "WebGL လက်ဗွေ", "audio": "အသံလက်ဗွေ", "cookies": "ကွတ်ကီးများကို ဖွင့်ထားသည်။", "dnt": "Do Not Track", "storage": "ဒေသတွင်းသိုလှောင်မှု", "fonts": "တွေ့ရှိထားသော ဖောင့်များ (နမူနာ)", "uniqueness": "ခန့်မှန်းခြေများကို ခွဲခြားသတ်မှတ်သည်။", "field": "အချက်ပြ", "value": "တန်ဖိုး"};</script>
+<script src="/app.js"></script>
+</body></html>
