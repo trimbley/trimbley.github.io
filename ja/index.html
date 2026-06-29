@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ブラウザ指紋 / User-Agent 確認ツール - あなたのブラウザが漏らす情報</title>
+<meta name="description" content="無料のクライアント側ツール。ブラウザの User-Agent、canvas と WebGL 指紋、言語、タイムゾーン、画面、ハードウェアを即表示——追跡者があなたを識別する信号そのものです。">
+<link rel="canonical" href="https://trimbley.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://trimbley.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://trimbley.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://trimbley.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://trimbley.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://trimbley.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://trimbley.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://trimbley.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://trimbley.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://trimbley.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://trimbley.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://trimbley.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://trimbley.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://trimbley.github.io/">
+<meta property="og:title" content="ブラウザ指紋 / User-Agent 確認ツール - あなたのブラウザが漏らす情報"><meta property="og:description" content="無料のクライアント側ツール。ブラウザの User-Agent、canvas と WebGL 指紋、言語、タイムゾーン、画面、ハードウェアを即表示——追跡者があなたを識別する信号そのものです。"><meta property="og:type" content="website"><meta property="og:url" content="https://trimbley.github.io/ja/"><meta property="og:image" content="https://trimbley.github.io/img/cover_ja.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "ブラウザ指紋 / User-Agent 確認ツール - あなたのブラウザが漏らす情報",
+   "url": "https://trimbley.github.io/ja/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "ja",
+   "description": "無料のクライアント側ツール。ブラウザの User-Agent、canvas と WebGL 指紋、言語、タイムゾーン、画面、ハードウェアを即表示——追跡者があなたを識別する信号そのものです。",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Zhou Yu",
+    "url": "https://trimbley.github.io/about-zhouyu/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "ja",
+   "url": "https://trimbley.github.io/ja/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "私のデータはどこかに送信されますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "いいえ。スキャンは標準の Web API を使ってブラウザ内で完結し、値はページに表示されるだけでアップロードされません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "User-Agent 文字列とは？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ブラウザがすべてのリクエストで送る一行のテキストで、ブラウザ名・バージョン・OS を示します。最も古く基本的な指紋信号の 1 つです。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "canvas ハッシュはなぜ重要？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "canvas に画像を描いて読み戻すと、GPU とフォント描画の微差が露わになり、端末に固有でセッション間で安定したハッシュが生まれます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "cookie を消せば指紋を隠せますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "いいえ。指紋は保存された cookie ではなく端末とブラウザの属性から作られるため、cookie 削除やプライベートモードの後も残ります。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "指紋を減らすには？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "信号を均質化するブラウザ（Tor ブラウザや Brave など）を使い、ブラウザを最新に保ち、目立つ稀なフォント・拡張機能・画面設定を避けましょう。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "これらの値は正確？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "あなたのブラウザから直接読み取るので、どのサイトにも見える内容そのものです。一部の属性（deviceMemory、vendor、platform）は非推奨または近似で、欠けることがあります。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">言語: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <strong>日本語</strong> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>ブラウザ指紋 / User-Agent 確認ツール</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_ja.webp"><img src="/img/cover_ja.png" alt="ブラウザ指紋と User-Agent 確認ツールの図" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ブラウザ指紋 / User-Agent 確認ツール——追跡者がブラウザの識別に組み合わせる信号</figcaption></figure>
+<p>どのブラウザも、User-Agent、canvas と WebGL の描画、フォント、言語、タイムゾーン、画面サイズといった信号をサイトに渡しています。これらの組み合わせは、cookie がなくてもあなたを識別できることが多いのです。本ツールはこれらの信号をブラウザ内でローカルに読み取って表示します。データは一切アップロードされず、スキャンはすべてあなたの端末上で完結します。</p>
+<section class="tool"><h2>今のあなたのブラウザ指紋</h2><p class="note">あなたのブラウザからリアルタイムに読み取ります。値はこのページに表示されるだけで、サーバーには送信されません。</p><div class="btns"><button id="rescan">再スキャン</button><button id="copyjson">JSON でコピー</button></div><table id="fp"></table></section>
+<h2>ブラウザ指紋とは？</h2><p>ブラウザ指紋とは、ブラウザが外部に公開する属性から作られるプロフィールです：User-Agent 文字列、インストール済みフォント、画面解像度、タイムゾーン、言語リスト、そして canvas や WebGL でグラフィックを描画する方法。その組み合わせはしばしば一意なので、cookie を遮断したりプライベートモードを使っても、再訪時にサイトはあなたを認識できます。</p>
+<figure><svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ブラウザ"><rect x="2" y="2" width="716" height="146" rx="14" fill="#fafcff" stroke="#e3ecfb"/><rect x="20" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="94" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">ブラウザ</text><path d="M168 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="200" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="274" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">信号</text><path d="M348 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="380" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="454" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">組合せ + ハッシュ</text><path d="M528 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="560" y="46" width="148" height="58" rx="12" fill="#0071e3" stroke="#cfe0ff"/><text x="634" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">指紋</text><text x="94" y="128" font-family="system-ui,Arial" font-size="11" fill="#7088b0" text-anchor="middle">UA · Canvas · WebGL · Fonts · TZ</text></svg><figcaption>信号が収集・組み合わせ・ハッシュ化され、1 つの指紋識別子になります。</figcaption></figure>
+<h2>canvas と WebGL 指紋の仕組み</h2><p>ページが隠した文字や図形を canvas に描画してピクセルを読み戻すと、GPU・グラフィックドライバ・フォント描画のわずかな違いが、あなたの端末に固有で安定した画像ハッシュを生みます。WebGL 指紋も同様にマスクされていない GPU のベンダーとレンダラーを読み取ります。この 2 つはほとんどの cookie 削除を生き延び、セッションをまたいで持続するため強力です。</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_ja.webp"><img src="/img/board_ja.png" alt="ブラウザ指紋のエントロピー源の図" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>指紋の作られ方：多数の信号が組み合わされ、1 つの識別子へハッシュ化される</figcaption></figure>
+<h2>最も多くを明かす信号</h2><p>研究者は識別力を「エントロピーのビット数」で測ります。ビットが多いほど、あなたと同じ値の人は少なくなります。公開研究では完全な指紋を約 18 ビットと見積もり、フォント・User-Agent・canvas・WebGL レンダラーが最も強い寄与項です。下図は主な源の相対的な重みを示します。</p>
+<figure><svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="識別力（ビット）"><rect x="2" y="2" width="716" height="246" rx="14" fill="#fff7f7" stroke="#fde2e2"/><text x="20" y="30" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="700" fill="#b91c1c">識別力（ビット）</text><text x="20" y="66" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Fonts</text><rect x="150" y="52" width="496" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="98" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">User-Agent</text><rect x="150" y="84" width="432" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="130" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Canvas</text><rect x="150" y="116" width="410" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="162" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">WebGL</text><rect x="150" y="148" width="367" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="194" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Screen</text><rect x="150" y="180" width="280" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="226" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Timezone</text><rect x="150" y="212" width="183" height="20" rx="6" fill="#ef6a6a"/></svg><figcaption>一般的な指紋信号の相対的な識別力（イメージ図。EFF によれば canvas は約 5.7 ビット）。</figcaption></figure>
+<section class="i4data">
+<h2>ブラウザ指紋の現状（2026 推計）</h2>
+<p>以下は公開研究を基線（EFF Panopticlick 2010、AmIUnique 2016、Hiding in the Crowd 2018）に時間外挿した 2026 年の推計です——一次実測ではなく、参考用です。</p>
+<table>
+<tr><th>信号</th><th>値</th></tr><tr><td>デスクトップ指紋が一意である割合</td><td>基線で約 83.6%（Panopticlick）〜89.4%（AmIUnique）。反指紋を切ると 2026 でも 80% 超</td></tr><tr><td>モバイル指紋が一意である割合</td><td>約 18.5%（Hiding in the Crowd 2018）——端末が均質なため低い</td></tr><tr><td>完全な指紋の総エントロピー</td><td>基線で約 18.1 ビット、ブラウザ約 28.6 万台に 1 台に相当</td></tr><tr><td>canvas 単独</td><td>約 5.7 ビットのエントロピーを追加（EFF）</td></tr><tr><td>最も強い単一信号</td><td>フォント集合（約 34% 識別可能）、User-Agent、canvas、WebGL レンダラー、画面</td></tr><tr><td>ブラウザ拡張機能</td><td>約 56.86% のユーザーが一意な拡張機能の組み合わせを持つ</td></tr><tr><td>反指紋の効果</td><td>Tor ブラウザ・Brave・Safari ITP は信号の均質化や遮断で一意性を大幅に下げられる</td></tr>
+</table>
+<p><small>推計の根拠：公開研究の基線（EFF / AmIUnique / Hiding in the Crowd）＋時間外挿。一次実測ではなく、ブラウザと反指紋技術の進化で変わります。</small></p>
+</section>
+<div class="faq"><h2>FAQ</h2>
+<h3>私のデータはどこかに送信されますか？</h3>
+<p>いいえ。スキャンは標準の Web API を使ってブラウザ内で完結し、値はページに表示されるだけでアップロードされません。</p>
+<h3>User-Agent 文字列とは？</h3>
+<p>ブラウザがすべてのリクエストで送る一行のテキストで、ブラウザ名・バージョン・OS を示します。最も古く基本的な指紋信号の 1 つです。</p>
+<h3>canvas ハッシュはなぜ重要？</h3>
+<p>canvas に画像を描いて読み戻すと、GPU とフォント描画の微差が露わになり、端末に固有でセッション間で安定したハッシュが生まれます。</p>
+<h3>cookie を消せば指紋を隠せますか？</h3>
+<p>いいえ。指紋は保存された cookie ではなく端末とブラウザの属性から作られるため、cookie 削除やプライベートモードの後も残ります。</p>
+<h3>指紋を減らすには？</h3>
+<p>信号を均質化するブラウザ（Tor ブラウザや Brave など）を使い、ブラウザを最新に保ち、目立つ稀なフォント・拡張機能・画面設定を避けましょう。</p>
+<h3>これらの値は正確？</h3>
+<p>あなたのブラウザから直接読み取るので、どのサイトにも見える内容そのものです。一部の属性（deviceMemory、vendor、platform）は非推奨または近似で、欠けることがあります。</p>
+</div>
+<div class="related"><h2>Quark Browser を入手</h2><p>Quark Browser は軽量な AI ブラウザです。Windows、macOS、Android、iOS、Web 版をダウンロードできます：</p>
+<p><a href="https://browserquark.com/download/">Quark Browser・全プラットフォーム ダウンロード</a></p></div>
+<div class="sources"><h2>参考文献</h2><ul><li><a href="https://en.wikipedia.org/wiki/Device_fingerprint" rel="nofollow noopener" target="_blank">デバイス指紋 - Wikipedia</a></li><li><a href="https://coveryourtracks.eff.org/" rel="nofollow noopener" target="_blank">EFF Cover Your Tracks</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator" rel="nofollow noopener" target="_blank">MDN - Navigator API</a></li><li><a href="https://amiunique.org/" rel="nofollow noopener" target="_blank">AmIUnique 研究プロジェクト</a></li></ul></div>
+</main>
+<footer>周屿が公開研究（EFF Panopticlick、AmIUnique、Hiding in the Crowd）と MDN Web Docs をもとに整理。参考用です。ライブスキャンはあなた自身のブラウザを読み取ります。<br><a href="/about-zhouyu/" rel="author">著者について：周屿</a> · MIT License</footer>
+</div>
+<script>window.FPL={"ua": "User-Agent", "platform": "プラットフォーム", "vendor": "ブラウザベンダー", "langs": "言語", "tz": "タイムゾーン", "tzoff": "UTC オフセット（分）", "screen": "画面", "viewport": "ビューポート", "depth": "色深度", "dpr": "ピクセル比", "cores": "CPU コア数", "mem": "デバイスメモリ（GB）", "touch": "最大タッチ点数", "canvas": "Canvas 指紋", "webglv": "WebGL ベンダー", "webglr": "WebGL レンダラー", "webglf": "WebGL 指紋", "audio": "オーディオ指紋", "cookies": "Cookie 有効", "dnt": "Do Not Track", "storage": "ローカルストレージ", "fonts": "検出フォント（抜粋）", "uniqueness": "推定識別ビット数", "field": "信号", "value": "値"};</script>
+<script src="/app.js"></script>
+</body></html>
