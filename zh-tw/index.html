@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>瀏覽器指紋 / User-Agent 線上檢視器 - 看看你的瀏覽器洩露了什麼</title>
+<meta name="description" content="免費純客戶端工具：一鍵檢視本機瀏覽器的 User-Agent、canvas 與 WebGL 指紋、語言、時區、螢幕與硬體資訊——這些正是追蹤者用來識別你的訊號。">
+<link rel="canonical" href="https://trimbley.github.io/zh-tw/">
+<link rel="alternate" hreflang="zh-Hans" href="https://trimbley.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://trimbley.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://trimbley.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://trimbley.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://trimbley.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://trimbley.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://trimbley.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://trimbley.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://trimbley.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://trimbley.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://trimbley.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://trimbley.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://trimbley.github.io/">
+<meta property="og:title" content="瀏覽器指紋 / User-Agent 線上檢視器 - 看看你的瀏覽器洩露了什麼"><meta property="og:description" content="免費純客戶端工具：一鍵檢視本機瀏覽器的 User-Agent、canvas 與 WebGL 指紋、語言、時區、螢幕與硬體資訊——這些正是追蹤者用來識別你的訊號。"><meta property="og:type" content="website"><meta property="og:url" content="https://trimbley.github.io/zh-tw/"><meta property="og:image" content="https://trimbley.github.io/img/cover_tw.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "瀏覽器指紋 / User-Agent 線上檢視器 - 看看你的瀏覽器洩露了什麼",
+   "url": "https://trimbley.github.io/zh-tw/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "zh-Hant",
+   "description": "免費純客戶端工具：一鍵檢視本機瀏覽器的 User-Agent、canvas 與 WebGL 指紋、語言、時區、螢幕與硬體資訊——這些正是追蹤者用來識別你的訊號。",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Zhou Yu",
+    "url": "https://trimbley.github.io/about-zhouyu/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "zh-Hant",
+   "url": "https://trimbley.github.io/zh-tw/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "我的資料會被髮送到哪裡嗎？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "不會。掃描完全在你的瀏覽器內用標準 Web API 完成；數值只顯示在頁面上，絕不上傳。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "User-Agent 字串是什麼？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "它是瀏覽器隨每個請求傳送的一行文字，標明瀏覽器名稱、版本和作業系統，是最古老也最基礎的指紋訊號之一。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "canvas 雜湊為什麼重要？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "把影象畫到 canvas 再讀回，會暴露 GPU 與字型渲染上的細微差異，產生一個常常專屬於你裝置、且跨會話穩定的雜湊。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "清除 cookie 能隱藏指紋嗎？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "不能。指紋來自裝置與瀏覽器屬性，而非儲存的 cookie，所以它能在你清除 cookie 或使用無痕模式後依然存在。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "如何減少我的指紋？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "使用會歸一訊號的瀏覽器（如 Tor 瀏覽器或 Brave），保持瀏覽器更新，並避免使用讓你顯得與眾不同的稀有字型、擴充套件和螢幕設定。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "這些數值準確嗎？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "它們直接讀取自你的瀏覽器，因此就是任何網站能看到的內容。部分屬性（deviceMemory、vendor、platform）已廢棄或為近似值，可能缺失。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">語言: <a href="/">简体中文</a> · <strong>繁體中文</strong> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>瀏覽器指紋 / User-Agent 線上檢視器</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_tw.webp"><img src="/img/cover_tw.png" alt="瀏覽器指紋與 User-Agent 檢視器工具示意圖" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>瀏覽器指紋 / User-Agent 檢視器——追蹤者用來識別瀏覽器的那些訊號</figcaption></figure>
+<p>每個瀏覽器都會向網站暴露一組訊號：User-Agent、canvas 與 WebGL 渲染、字型、語言、時區、螢幕尺寸——它們組合起來，往往不需要任何 cookie 就能識別出你。本工具在你的瀏覽器本地讀取這些訊號並展示給你；不上傳任何資料，掃描全程在你的裝置上完成。</p>
+<section class="tool"><h2>你此刻的瀏覽器指紋</h2><p class="note">實時讀取自你的瀏覽器。所有數值只顯示在本頁面，不會傳送到任何伺服器。</p><div class="btns"><button id="rescan">重新掃描</button><button id="copyjson">複製為 JSON</button></div><table id="fp"></table></section>
+<h2>什麼是瀏覽器指紋？</h2><p>瀏覽器指紋是用你瀏覽器對外暴露的屬性拼出的一份畫像：User-Agent 字串、已裝字型、螢幕解析度、時區、語言列表，以及裝置透過 canvas 和 WebGL 渲染圖形的方式。由於這些屬性的組合常常是獨一無二的，即使你遮蔽 cookie 或用無痕模式，網站仍可能在你再次到訪時認出你。</p>
+<figure><svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="瀏覽器"><rect x="2" y="2" width="716" height="146" rx="14" fill="#fafcff" stroke="#e3ecfb"/><rect x="20" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="94" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">瀏覽器</text><path d="M168 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="200" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="274" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">訊號</text><path d="M348 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="380" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="454" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">組合 + 雜湊</text><path d="M528 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="560" y="46" width="148" height="58" rx="12" fill="#0071e3" stroke="#cfe0ff"/><text x="634" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">指紋</text><text x="94" y="128" font-family="system-ui,Arial" font-size="11" fill="#7088b0" text-anchor="middle">UA · Canvas · WebGL · Fonts · TZ</text></svg><figcaption>各路訊號被採集、組合並雜湊，最終生成一個指紋標識。</figcaption></figure>
+<h2>canvas 與 WebGL 指紋的原理</h2><p>當頁面把隱藏的文字和圖形畫到 canvas 再把畫素讀回時，你的 GPU、顯示卡驅動和字型渲染上的細微差異會產生一個穩定、且專屬於你這臺機器的影象雜湊。WebGL 指紋則以同樣方式讀取未被遮蔽的 GPU 廠商與渲染器。這兩個訊號之所以強，是因為它們能挺過大多數清除 cookie 的操作，並跨會話持續存在。</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_tw.webp"><img src="/img/board_tw.png" alt="瀏覽器指紋熵來源示意圖" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>指紋是怎樣形成的：多個訊號被組合並雜湊成一個標識</figcaption></figure>
+<h2>哪些訊號暴露得最多</h2><p>研究者用「熵的位元數」衡量識別力：位元越多，和你取值相同的人越少。已發表研究把一份完整指紋估為約 18 位元，其中字型、User-Agent、canvas 和 WebGL 渲染器是最強的貢獻項。下圖展示了主要來源的相對權重。</p>
+<figure><svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="識別力（位元）"><rect x="2" y="2" width="716" height="246" rx="14" fill="#fff7f7" stroke="#fde2e2"/><text x="20" y="30" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="700" fill="#b91c1c">識別力（位元）</text><text x="20" y="66" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Fonts</text><rect x="150" y="52" width="496" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="98" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">User-Agent</text><rect x="150" y="84" width="432" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="130" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Canvas</text><rect x="150" y="116" width="410" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="162" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">WebGL</text><rect x="150" y="148" width="367" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="194" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Screen</text><rect x="150" y="180" width="280" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="226" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Timezone</text><rect x="150" y="212" width="183" height="20" rx="6" fill="#ef6a6a"/></svg><figcaption>常見指紋訊號的相對識別力（示意；據 EFF，canvas 約 5.7 位元）。</figcaption></figure>
+<section class="i4data">
+<h2>瀏覽器指紋現狀（2026 估算）</h2>
+<p>下列數字是以公開研究為基線（EFF Panopticlick 2010、AmIUnique 2016、Hiding in the Crowd 2018）加時間外推得到的 2026 估算——非一手實測，僅供參考。</p>
+<table>
+<tr><th>訊號</th><th>數值</th></tr><tr><td>桌面端指紋唯一佔比</td><td>基線約 83.6%（Panopticlick）至 89.4%（AmIUnique）；未開反指紋時 2026 仍超 80%</td></tr><tr><td>移動端指紋唯一佔比</td><td>約 18.5%（Hiding in the Crowd 2018）——更低，因手機更同質化</td></tr><tr><td>完整指紋的總熵</td><td>基線約 18.1 位元，約相當於 28.6 萬臺瀏覽器裡挑出 1 臺</td></tr><tr><td>僅 canvas 一項</td><td>約增加 5.7 位元熵（EFF）</td></tr><tr><td>最強的單項訊號</td><td>字型集（約 34% 可識別）、User-Agent、canvas、WebGL 渲染器、螢幕</td></tr><tr><td>瀏覽器擴充套件</td><td>約 56.86% 的使用者擁有唯一的擴充套件組合</td></tr><tr><td>反指紋的效果</td><td>Tor 瀏覽器、Brave 與 Safari ITP 可透過歸一或遮蔽訊號大幅降低唯一性</td></tr>
+</table>
+<p><small>估算口徑：以公開研究為基線（EFF / AmIUnique / Hiding in the Crowd）加時間外推；非一手實測，隨瀏覽器與反指紋技術演進而變。</small></p>
+</section>
+<div class="faq"><h2>FAQ</h2>
+<h3>我的資料會被髮送到哪裡嗎？</h3>
+<p>不會。掃描完全在你的瀏覽器內用標準 Web API 完成；數值只顯示在頁面上，絕不上傳。</p>
+<h3>User-Agent 字串是什麼？</h3>
+<p>它是瀏覽器隨每個請求傳送的一行文字，標明瀏覽器名稱、版本和作業系統，是最古老也最基礎的指紋訊號之一。</p>
+<h3>canvas 雜湊為什麼重要？</h3>
+<p>把影象畫到 canvas 再讀回，會暴露 GPU 與字型渲染上的細微差異，產生一個常常專屬於你裝置、且跨會話穩定的雜湊。</p>
+<h3>清除 cookie 能隱藏指紋嗎？</h3>
+<p>不能。指紋來自裝置與瀏覽器屬性，而非儲存的 cookie，所以它能在你清除 cookie 或使用無痕模式後依然存在。</p>
+<h3>如何減少我的指紋？</h3>
+<p>使用會歸一訊號的瀏覽器（如 Tor 瀏覽器或 Brave），保持瀏覽器更新，並避免使用讓你顯得與眾不同的稀有字型、擴充套件和螢幕設定。</p>
+<h3>這些數值準確嗎？</h3>
+<p>它們直接讀取自你的瀏覽器，因此就是任何網站能看到的內容。部分屬性（deviceMemory、vendor、platform）已廢棄或為近似值，可能缺失。</p>
+</div>
+<div class="related"><h2>獲取夸克瀏覽器</h2><p>夸克瀏覽器是一款輕量的 AI 瀏覽器，支援 Windows、macOS、Android、iOS 與網頁版下載：</p>
+<p><a href="https://browserquark.com/download/">夸克瀏覽器·全平臺下載</a></p></div>
+<div class="sources"><h2>參考資料</h2><ul><li><a href="https://en.wikipedia.org/wiki/Device_fingerprint" rel="nofollow noopener" target="_blank">裝置指紋 - 維基百科</a></li><li><a href="https://coveryourtracks.eff.org/" rel="nofollow noopener" target="_blank">EFF Cover Your Tracks</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator" rel="nofollow noopener" target="_blank">MDN - Navigator API</a></li><li><a href="https://amiunique.org/" rel="nofollow noopener" target="_blank">AmIUnique 研究專案</a></li></ul></div>
+</main>
+<footer>由周嶼整理自公開研究（EFF Panopticlick、AmIUnique、Hiding in the Crowd）與 MDN Web 文件，僅供參考；實時掃描讀取的是你自己的瀏覽器。<br><a href="/about-zhouyu/" rel="author">關於作者：周嶼</a> · MIT License</footer>
+</div>
+<script>window.FPL={"ua": "User-Agent", "platform": "平臺", "vendor": "瀏覽器廠商", "langs": "語言列表", "tz": "時區", "tzoff": "UTC 偏移（分鐘）", "screen": "螢幕", "viewport": "視口", "depth": "顏色深度", "dpr": "畫素比", "cores": "CPU 核心數", "mem": "裝置記憶體（GB）", "touch": "最大觸點數", "canvas": "Canvas 指紋", "webglv": "WebGL 廠商", "webglr": "WebGL 渲染器", "webglf": "WebGL 指紋", "audio": "音訊指紋", "cookies": "Cookie 已啟用", "dnt": "Do Not Track", "storage": "本地儲存", "fonts": "檢測到的字型（抽樣）", "uniqueness": "估算識別位元數", "field": "訊號", "value": "數值"};</script>
+<script src="/app.js"></script>
+</body></html>
