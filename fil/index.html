@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="fil"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Browser Fingerprint at User-Agent Viewer - tingnan kung ano ang tumagas sa iyong browser</title>
+<meta name="description" content="Libreng tool sa panig ng kliyente: agarang makita ang User-Agent, canvas at WebGL fingerprint ng iyong browser, mga wika, timezone, screen at hardware - ang eksaktong mga signal na ginagamit ng mga tagasubaybay upang makilala ka.">
+<link rel="canonical" href="https://trimbley.github.io/fil/">
+<link rel="alternate" hreflang="zh-Hans" href="https://trimbley.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://trimbley.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://trimbley.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://trimbley.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://trimbley.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://trimbley.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://trimbley.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://trimbley.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://trimbley.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://trimbley.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://trimbley.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://trimbley.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://trimbley.github.io/">
+<meta property="og:title" content="Browser Fingerprint at User-Agent Viewer - tingnan kung ano ang tumagas sa iyong browser"><meta property="og:description" content="Libreng tool sa panig ng kliyente: agarang makita ang User-Agent, canvas at WebGL fingerprint ng iyong browser, mga wika, timezone, screen at hardware - ang eksaktong mga signal na ginagamit ng mga tagasubaybay upang makilala ka."><meta property="og:type" content="website"><meta property="og:url" content="https://trimbley.github.io/fil/"><meta property="og:image" content="https://trimbley.github.io/img/cover_fil.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Browser Fingerprint at User-Agent Viewer - tingnan kung ano ang tumagas sa iyong browser",
+   "url": "https://trimbley.github.io/fil/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "fil",
+   "description": "Libreng tool sa panig ng kliyente: agarang makita ang User-Agent, canvas at WebGL fingerprint ng iyong browser, mga wika, timezone, screen at hardware - ang eksaktong mga signal na ginagamit ng mga tagasubaybay upang makilala ka.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Zhou Yu",
+    "url": "https://trimbley.github.io/about-zhouyu/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "fil",
+   "url": "https://trimbley.github.io/fil/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Naipadala ba ang aking data kahit saan?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Hindi. Ang pag-scan ay ganap na tumatakbo sa iyong browser gamit ang karaniwang mga web API; ang mga halaga ay ipinapakita sa pahina at hindi kailanman na-upload."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Ano ang User-Agent string?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ito ay isang linya na ipinapadala ng iyong browser sa bawat kahilingan na nagpapangalan sa browser, bersyon nito at operating system. Isa ito sa pinakaluma at pinakapangunahing signal ng fingerprint."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Bakit mahalaga ang canvas hash?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ang pagguhit at pagbabasa ng canvas na larawan ay naglalantad ng maliliit na GPU at mga pagkakaiba sa pag-render ng font, na gumagawa ng hash na kadalasang natatangi sa iyong device at stable sa mga session."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Itinatago ba ng pag-clear ng cookies ang aking fingerprint?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Hindi. Binuo ang fingerprint mula sa mga pag-aari ng device at browser, hindi nakaimbak na cookies, kaya maaari itong magpatuloy pagkatapos mong i-clear ang cookies o gumamit ng pribadong mode."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Paano ko mababawasan ang aking fingerprint?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Gumamit ng browser na nag-normalize ng mga signal (gaya ng Tor Browser o Brave), panatilihing updated ang iyong browser, at iwasan ang mga bihirang font, extension at setting ng screen na nagpapakilala sa iyo."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Tumpak ba ang mga halagang ito?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Direktang binabasa ang mga ito mula sa iyong browser, kaya ipinapakita nila kung ano ang nakikita ng anumang website. Ang ilang property (deviceMemory, vendor, platform) ay hindi na ginagamit o tinantiya at maaaring nawawala."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Wika: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <strong>Filipino</strong> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Browser Fingerprint at User-Agent Viewer</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_fil.webp"><img src="/img/cover_fil.png" alt="Browser fingerprint at User-Agent viewer tool illustration" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Fingerprint ng browser at User-Agent viewer - pinagsama-sama ang mga tagasubaybay ng signal upang matukoy ang isang browser</figcaption></figure>
+<p>Ang bawat browser ay naglalabas ng isang hanay ng mga signal - ang iyong User-Agent, canvas at WebGL rendering, mga font, wika, timezone at laki ng screen - na magkakasamang makikilala ka nang walang anumang cookie. Binabasa ng tool na ito ang mga signal na iyon nang lokal sa iyong browser at ipinapakita ang mga ito sa iyo. Walang na-upload; ang pag-scan ay ganap na tumatakbo sa iyong device.</p>
+<section class="tool"><h2>Ang fingerprint ng iyong browser, ngayon</h2><p class="note">Magbasa nang live mula sa iyong browser. Ang mga halaga ay nananatili sa pahinang ito - walang ipinapadala sa isang server.</p><div class="btns"><button id="rescan">Muling i-scan</button><button id="copyjson">Kopyahin bilang JSON</button></div><table id="fp"></table></section>
+<h2>Ano ang fingerprint ng browser?</h2><p>Ang fingerprint ng browser ay isang profile na binuo mula sa mga pag-aari na inilantad ng iyong browser sa anumang website: ang User-Agent string, mga naka-install na font, resolution ng screen, timezone, listahan ng wika, at kung paano nag-render ang iyong device ng mga graphics sa pamamagitan ng canvas at WebGL. Dahil kadalasang kakaiba ang kumbinasyon, makikilala ka ng isang site sa mga susunod na pagbisita kahit na nag-block ka ng cookies o gumamit ng private mode.</p>
+<figure><svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Browser"><rect x="2" y="2" width="716" height="146" rx="14" fill="#fafcff" stroke="#e3ecfb"/><rect x="20" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="94" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">Browser</text><path d="M168 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="200" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="274" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">Mga senyales</text><path d="M348 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="380" y="46" width="148" height="58" rx="12" fill="#eef4ff" stroke="#cfe0ff"/><text x="454" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#1d4ed8" text-anchor="middle">Pagsamahin ang + hash</text><path d="M528 75 l24 0 m-7 -6 l7 6 l-7 6" stroke="#9bb6e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="560" y="46" width="148" height="58" rx="12" fill="#0071e3" stroke="#cfe0ff"/><text x="634" y="80" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Fingerprint</text><text x="94" y="128" font-family="system-ui,Arial" font-size="11" fill="#7088b0" text-anchor="middle">UA · Canvas · WebGL · Fonts · TZ</text></svg><figcaption>Ang mga signal ay kinokolekta, pinagsama at na-hash sa isang fingerprint identifier.</figcaption></figure>
+<h2>Paano gumagana ang canvas at WebGL fingerprinting</h2><p>Kapag ang isang page ay gumuhit ng nakatagong text at mga hugis sa isang canvas at binasa ang mga pixel pabalik, ang maliliit na pagkakaiba sa iyong GPU, graphics driver at pag-render ng font ay gumagawa ng isang matatag na hash ng larawan na partikular sa iyong makina. Binabasa ng WebGL fingerprinting ang hindi nakatatak na GPU vendor at renderer sa parehong paraan. Malakas ang dalawang signal na ito dahil nakaligtas ang mga ito sa karamihan ng pag-clear ng cookie at nagpapatuloy sa mga session.</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_fil.webp"><img src="/img/board_fil.png" alt="Diagram ng mga pinagmumulan ng entropy ng fingerprint ng browser" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Paano binuo ang fingerprint ng browser: maraming signal ang pinagsama at na-hash sa isang identifier</figcaption></figure>
+<h2>Aling mga senyales ang pinakanagpapakita</h2><p>Sinusukat ng mga mananaliksik ang pagtukoy ng kapangyarihan sa mga piraso ng entropy: ang mas maraming bit ay nangangahulugan na mas kaunting tao ang nagbabahagi ng iyong halaga. Ang mga nai-publish na pag-aaral ay naglagay ng buong fingerprint sa paligid ng 18 bits, na may mga font, ang User-Agent, canvas at ang WebGL renderer sa mga pinakamalakas na nag-aambag. Ipinapakita ng tsart sa ibaba ang relatibong bigat ng mga pangunahing pinagmumulan.</p>
+<figure><svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pagkilala sa kapangyarihan (mga bit)"><rect x="2" y="2" width="716" height="246" rx="14" fill="#fff7f7" stroke="#fde2e2"/><text x="20" y="30" font-family="system-ui,Segoe UI,Arial" font-size="15" font-weight="700" fill="#b91c1c">Pagkilala sa kapangyarihan (mga bit)</text><text x="20" y="66" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Fonts</text><rect x="150" y="52" width="496" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="98" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">User-Agent</text><rect x="150" y="84" width="432" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="130" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Canvas</text><rect x="150" y="116" width="410" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="162" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">WebGL</text><rect x="150" y="148" width="367" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="194" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Screen</text><rect x="150" y="180" width="280" height="20" rx="6" fill="#ef6a6a"/><text x="20" y="226" font-family="ui-monospace,Consolas,monospace" font-size="12.5" fill="#7a2e2e">Timezone</text><rect x="150" y="212" width="183" height="20" rx="6" fill="#ef6a6a"/></svg><figcaption>Relatibong pagtukoy ng kapangyarihan ng mga karaniwang fingerprint signal (nagpapakita; canvas approx. 5.7 bits bawat EFF).</figcaption></figure>
+<section class="i4data">
+<h2>Landscape ng fingerprinting ng browser (2026 na pagtatantya)</h2>
+<p>Ang mga figure sa ibaba ay isang pagtatantya noong 2026 na binuo mula sa na-publish na mga baseline ng pananaliksik (EFF Panopticlick 2010, AmIUnique 2016, Hiding in the Crowd 2018) at extrapolation ng oras - hindi ang unang pagsukat, para sa sanggunian lamang.</p>
+<table>
+<tr><th>Signal</th><th>Halaga</th></tr><tr><td>Mga fingerprint sa desktop na natatangi</td><td>~83.6% (Panopticlick) hanggang ~89.4% (AmIUnique) baseline; mahigit 80% pa rin sa 2026 kapag naka-off ang anti-fingerprinting</td></tr><tr><td>Mga mobile fingerprint na natatangi</td><td>~18.5% (Hiding in the Crowd 2018) - mas mababa, dahil mas homogenous ang mga telepono</td></tr><tr><td>Kabuuang entropy ng fingerprint</td><td>~18.1 bits baseline, humigit-kumulang 1 sa 286,000 browser</td></tr><tr><td>Mag-isa ang signal ng Canvas</td><td>~5.7 bits ng idinagdag na entropy (EFF)</td></tr><tr><td>Pinakamalakas na solong signal</td><td>set ng font (mga 34% na makikilala), User-Agent, canvas, WebGL renderer, screen</td></tr><tr><td>Mga extension ng browser</td><td>humigit-kumulang 56.86% ng mga user ang may natatanging hanay ng extension</td></tr><tr><td>Epekto ng anti-fingerprinting</td><td>Ang Tor Browser, Brave at Safari ITP ay maaaring mabawasan nang husto ang pagiging natatangi sa pamamagitan ng pag-normalize o pagharang ng mga signal</td></tr>
+</table>
+<p><small>Batayan sa pagtatantya: mga baseline ng pampublikong pananaliksik (EFF / AmIUnique / Hiding in the Crowd) at extrapolation ng oras; hindi isang unang-kamay na pagsukat at mga pagbabago habang nagbabago ang mga browser at anti-fingerprinting.</small></p>
+</section>
+<div class="faq"><h2>FAQ</h2>
+<h3>Naipadala ba ang aking data kahit saan?</h3>
+<p>Hindi. Ang pag-scan ay ganap na tumatakbo sa iyong browser gamit ang karaniwang mga web API; ang mga halaga ay ipinapakita sa pahina at hindi kailanman na-upload.</p>
+<h3>Ano ang User-Agent string?</h3>
+<p>Ito ay isang linya na ipinapadala ng iyong browser sa bawat kahilingan na nagpapangalan sa browser, bersyon nito at operating system. Isa ito sa pinakaluma at pinakapangunahing signal ng fingerprint.</p>
+<h3>Bakit mahalaga ang canvas hash?</h3>
+<p>Ang pagguhit at pagbabasa ng canvas na larawan ay naglalantad ng maliliit na GPU at mga pagkakaiba sa pag-render ng font, na gumagawa ng hash na kadalasang natatangi sa iyong device at stable sa mga session.</p>
+<h3>Itinatago ba ng pag-clear ng cookies ang aking fingerprint?</h3>
+<p>Hindi. Binuo ang fingerprint mula sa mga pag-aari ng device at browser, hindi nakaimbak na cookies, kaya maaari itong magpatuloy pagkatapos mong i-clear ang cookies o gumamit ng pribadong mode.</p>
+<h3>Paano ko mababawasan ang aking fingerprint?</h3>
+<p>Gumamit ng browser na nag-normalize ng mga signal (gaya ng Tor Browser o Brave), panatilihing updated ang iyong browser, at iwasan ang mga bihirang font, extension at setting ng screen na nagpapakilala sa iyo.</p>
+<h3>Tumpak ba ang mga halagang ito?</h3>
+<p>Direktang binabasa ang mga ito mula sa iyong browser, kaya ipinapakita nila kung ano ang nakikita ng anumang website. Ang ilang property (deviceMemory, vendor, platform) ay hindi na ginagamit o tinantiya at maaaring nawawala.</p>
+</div>
+<div class="related"><h2>Kunin ang Quark Browser</h2><p>Ang Quark Browser ay isang magaan na AI browser. I-download ito para sa Windows, macOS, Android, iOS o sa web:</p>
+<p><a href="https://browserquark.com/download/">Quark Browser - pag-download sa lahat ng platform</a></p></div>
+<div class="sources"><h2>Mga sanggunian</h2><ul><li><a href="https://en.wikipedia.org/wiki/Device_fingerprint" rel="nofollow noopener" target="_blank">Fingerprint ng device - Wikipedia</a></li><li><a href="https://coveryourtracks.eff.org/" rel="nofollow noopener" target="_blank">EFF Cover Your Tracks</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator" rel="nofollow noopener" target="_blank">MDN - Navigator API</a></li><li><a href="https://amiunique.org/" rel="nofollow noopener" target="_blank">AmIUnique proyekto ng pananaliksik</a></li></ul></div>
+</main>
+<footer>Inipon ni Zhou Yu mula sa pampublikong pananaliksik (EFF Panopticlick, AmIUnique, Hiding in the Crowd) at MDN Web Docs. Para sa sanggunian lamang; binabasa ng live scan ang iyong sariling browser.<br><a href="/about-zhouyu/" rel="author">Tungkol sa may-akda: Zhou Yu</a> · MIT License</footer>
+</div>
+<script>window.FPL={"ua": "User-Agent", "platform": "Plataporma", "vendor": "Vendor ng browser", "langs": "Mga wika", "tz": "Timezone", "tzoff": "UTC offset (min)", "screen": "Screen", "viewport": "Viewport", "depth": "Lalim ng kulay", "dpr": "Pixel ratio", "cores": "Mga core ng CPU", "mem": "Memorya ng device (GB)", "touch": "Max touch point", "canvas": "Canvas fingerprint", "webglv": "Nagtitinda ng WebGL", "webglr": "WebGL renderer", "webglf": "WebGL fingerprint", "audio": "Audio fingerprint", "cookies": "Pinagana ang cookies", "dnt": "Do Not Track", "storage": "Lokal na imbakan", "fonts": "Mga natukoy na font (sample)", "uniqueness": "Tinantyang pagkilala sa mga bit", "field": "Signal", "value": "Halaga"};</script>
+<script src="/app.js"></script>
+</body></html>
